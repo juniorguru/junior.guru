@@ -1,11 +1,33 @@
 import { describe, it, expect } from "vitest";
 
 import {
+  getGitHubProfileEventNames,
   getGitHubProfileIssueURL,
   getGitHubProfileUsername,
 } from "../../src/jg/coop/js/github-profile";
 
 describe("github-profile.js", () => {
+  describe("getGitHubProfileEventNames()", () => {
+    it.each(["homepage", "jobs", "handbook"])(
+      "returns generic and %s events",
+      (placement) => {
+        expect(getGitHubProfileEventNames(placement)).toEqual([
+          "github_profile_check",
+          `github_profile_check_${placement}`,
+        ]);
+      },
+    );
+
+    it.each([undefined, ""])(
+      "returns only generic event for placement %j",
+      (placement) => {
+        expect(getGitHubProfileEventNames(placement)).toEqual([
+          "github_profile_check",
+        ]);
+      },
+    );
+  });
+
   describe("getGitHubProfileUsername()", () => {
     it("parses username as-is", () => {
       expect(getGitHubProfileUsername("honzajavorek")).toBe("honzajavorek");

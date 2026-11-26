@@ -311,7 +311,7 @@
 
 
 {% macro github_profile_form(placement) %}
-<form id="github-profile-form" action="https://github.com/juniorguru/eggtray/issues/new" target="_blank">
+<form id="github-profile-form" action="https://github.com/juniorguru/eggtray/issues/new" target="_blank" data-placement="{{ placement }}">
   <fieldset class="github-profile {{ placement }}">
     <legend class="github-profile-title">
       {% if placement != "jobs" %}{{ "check-circle-fill"|icon }}{% endif %}

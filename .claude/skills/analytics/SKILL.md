@@ -34,7 +34,7 @@ curl -sSL "https://simpleanalytics.com/junior.guru.json?version=6&info=false&sta
 - Time series: `histogram` with `interval=hour|day|week|month|year`.
 - Breakdowns (lists of `{value, pageviews, visitors}`, sorted desc, capped by `limit` 1–1000): `pages`, `referrers`, `countries`, `utm_sources`, `utm_mediums`, `utm_campaigns`, `utm_contents`, `utm_terms`, `browser_names`, `os_names`, `device_types`.
 - `seconds_on_page`: median time on page; also embedded into `pages` items.
-- Custom events: `events=*` or `events=name1,name2`. The only event currently sent from the site is `github_profile_check` (see `src/jg/coop/js/github-profile.js`).
+- Custom events: `events=*` or `events=name1,name2`, returned as `{"events": [{"name": …, "total": …}]}`. Available for public stats, no API key needed. The site sends `github_profile_check` on every GitHub profile check form submit, plus `github_profile_check_<placement>` (`homepage`, `jobs`, `handbook`) since November 2026 (see `src/jg/coop/js/github-profile.js`).
 
 Dates:
 
@@ -50,7 +50,7 @@ Filters: `page`, `pages` (comma-separated), `country`, `referrer`, `utm_source`,
 - Main sections: `/jobs` (job board, by far the most traffic; city listings like `/jobs/brno`, individual jobs as `/jobs/<hash id>`), `/handbook/*`, `/courses/*` (course providers), `/club`, `/stories/*`, `/podcast/*`, `/events/*`.
 - Traffic is mostly from Czechia (`cz`) and Slovakia (`sk`); top referrer is `google`.
 - Existing code reading the API, use as reference before writing new code:
-  - `src/jg/coop/sync/web_usage.py`: monthly pageviews per section, rendered at `/about/web-usage` (`src/jg/coop/web/docs/about/web-usage.md`). It fetches one unfiltered `fields=pageviews,pages` request per complete month, saves it to `src/jg/coop/data/web_usage/YYYY-MM.jsonl` (one `{"page": …, "pageviews": …}` row per path, committed by CI), and sums the sections locally. For monthly pageviews of past months, read those files before querying the API.
+  - `src/jg/coop/sync/web_usage.py`: monthly pageviews per section, rendered at `/about/web-usage` (`src/jg/coop/web/docs/about/web-usage.md`). It fetches one unfiltered `fields=pageviews,pages` request per complete month, saves it to `src/jg/coop/data/web_usage/YYYY-MM.jsonl` (one `{"page": …, "pageviews": …}` row per path, committed by CI), and sums the sections locally. It also fetches `events=*` per month into `src/jg/coop/data/web_usage/events/YYYY-MM.jsonl` (one `{"name": …, "total": …}` row per event). For monthly pageviews or event counts of past months, read those files before querying the API.
   - `src/jg/coop/sync/course_providers.py`: pageviews of `/courses/*` pages.
   - `src/jg/coop/models/job.py`: builds a dashboard link filtered to one job (`?search=paths:<id>&start=…&end=…`).
 - Never run `jg sync` just to get analytics. Query the API directly.
