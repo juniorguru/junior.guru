@@ -88,31 +88,56 @@
   display: block;
 }
 
-// Box in the jobs listing, see .jobs-item.form
+// Box in the jobs listing, made to look like the club box (.jobs-club)
 .github-profile.jobs {
   margin: 0;
+  text-align: center;
   background: none;
   border: 0;
 }
 
 .github-profile.jobs .github-profile-title {
-  align-items: center;
+  @extend .fs-5;
+  justify-content: center;
+  margin-bottom: map.get($spacers, 2);
 }
 
 .github-profile.jobs .github-profile-title h4 {
-  min-width: 0;
   margin: 0;
+  font-size: inherit;
+  font-weight: $font-weight-bold;
+  color: $jg-dark;
 }
 
-.github-profile.jobs .github-profile-chick {
-  flex-shrink: 0;
-  width: auto;
-  height: 3rem;
-  margin-left: auto;
-  transform: rotate(-1deg);
+.github-profile-text {
+  margin-bottom: $spacer;
+}
 
+.github-profile.jobs .github-profile-label {
+  @extend .visually-hidden;
+}
+
+.github-profile.jobs .github-profile-row {
+  max-width: 32rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.github-profile.jobs .github-profile-button {
   @include media-breakpoint-up(sm) {
-    height: 4rem;
+    @include button-size(
+      $btn-padding-y-lg,
+      $btn-padding-x-lg,
+      $btn-font-size-lg,
+      $btn-border-radius-lg
+    );
+  }
+}
+
+.github-profile.jobs .github-profile-input {
+  @include media-breakpoint-up(sm) {
+    padding: $input-padding-y-lg $input-padding-x-lg;
+    font-size: $input-font-size-lg;
   }
 }
 

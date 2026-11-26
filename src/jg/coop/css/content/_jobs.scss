@@ -322,14 +322,10 @@
   @extend .btn-primary;
 }
 
-.jobs-item.club {
-  background-color: $jg-white;
-  border-color: $border-color;
-}
-
+.jobs-item.club,
 .jobs-item.form {
   background-color: $jg-white;
-  border-color: $jg-blue;
+  border-color: $border-color;
 }
 
 .jobs-club {
@@ -339,7 +335,8 @@
   border-radius: 0 0 $border-radius $border-radius;
 }
 
-.jobs-item.club .jobs-club {
+.jobs-item.club .jobs-club,
+.jobs-item.form .github-profile {
   border-radius: $border-radius;
 }
 

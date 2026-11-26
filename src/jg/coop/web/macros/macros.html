@@ -314,17 +314,21 @@
 <form id="github-profile-form" action="https://github.com/juniorguru/eggtray/issues/new" target="_blank">
   <fieldset class="github-profile {{ placement }}">
     <legend class="github-profile-title">
-      {{ "check-circle-fill"|icon }}
+      {% if placement != "jobs" %}{{ "check-circle-fill"|icon }}{% endif %}
       {% if placement == "homepage" %}
         <h4>Můžeš si už hledat práci? Otestuj si GitHub profil</h4>
         {{ img('static/chick-icon.svg', '', 207, 165, class='github-profile-chick', lazy=False) }}
       {% elif placement == "jobs" %}
         <h4>Než pošleš CV, otestuj si GitHub profil</h4>
-        {{ img('static/chick-icon.svg', '', 207, 165, class='github-profile-chick') }}
       {% else %}
         <h4>Otestuj si GitHub profil</h4>
       {% endif %}
     </legend>
+    {% if placement == "jobs" %}
+    <p class="github-profile-text">
+      Náboráři se na něj dívají. Robot ti zdarma poradí, co na něm zlepšit.
+    </p>
+    {% endif %}
     <label for="github-profile-input" class="github-profile-label">Adresa tvého GitHub profilu:</label>
     <div class="github-profile-row">
       <input id="github-profile-input" class="github-profile-input" required placeholder="https://github.com/username">
