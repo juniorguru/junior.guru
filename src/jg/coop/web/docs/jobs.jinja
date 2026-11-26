@@ -37,8 +37,8 @@ template: main_jobs.html
 
 {% call note() -%}
   {{ 'plus-circle'|icon }} Chceš přidat inzerát?
-  Vytvoř si zdarma [účet v klubu]({{ pages|docs_url('club.md')|url }}?utm_source=jobs-recruiters&utm_medium=web&utm_campaign=jaro)
-  a založ nové vlákno v kanálu [#práce-inzeráty]({{ club_jobs_channel_url }})
+  Vytvoř si zdarma <a href="{{ pages|docs_url('club.md')|url }}?utm_source=jobs-recruiters&amp;utm_medium=web&amp;utm_campaign=jaro">účet v klubu</a>
+  a založ nové vlákno v kanálu <a href="{{ club_jobs_channel_url }}">#práce-inzeráty</a>
 {%- endcall %}
 
 {{ jobs_filters_form(filters) }}
