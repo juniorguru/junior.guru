@@ -305,9 +305,10 @@ Odkazy s označením kampaní přibyly na web až v listopadu 2026, proto gra
   {%- endcall %}
 {% endif %}
 
-Druhý graf ukazuje, kolik lidí za poslední půlrok jednotlivé kampaně přivedly na zkušební období a kolik z nich už za členství zaplatilo.
-U placení se nedá říct, ve kterém měsíci k němu došlo, systém ví jen to, jestli člověk někdy něco zaplatil.
-Proto zůstává jako součet za celé období, ne po měsících.
+Druhý graf ukazuje, kolik lidí jednotlivé kampaně přivedly na zkušební období do klubu za poslední půlrok a kolik z těch lidí už za členství zaplatilo.
+U placení se nedá říct, ve kterém měsíci k němu došlo.
+Systém ví jen to, jestli člověk někdy něco zaplatil.
+Proto to zůstává jako součet za celé období, ne po měsících.
 {% if charts.campaign_breakdown_count -%}
 Celkem jde o **{{ charts.campaign_breakdown_count }}** lidí.
 
