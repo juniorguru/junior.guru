@@ -314,19 +314,33 @@
 <form id="github-profile-form" action="https://github.com/juniorguru/eggtray/issues/new" target="_blank">
   <fieldset class="github-profile {{ placement }}">
     <legend class="github-profile-title">
-      {{ "check-circle-fill"|icon }}
+      {% if placement != "jobs" %}{{ "check-circle-fill"|icon }}{% endif %}
       {% if placement == "homepage" %}
         <h4>Můžeš si už hledat práci? Otestuj si GitHub profil</h4>
         {{ img('static/chick-icon.svg', '', 207, 165, class='github-profile-chick', lazy=False) }}
+      {% elif placement == "jobs" %}
+        <h4>Než pošleš CV, otestuj si GitHub profil</h4>
       {% else %}
         <h4>Otestuj si GitHub profil</h4>
       {% endif %}
     </legend>
+    {% if placement == "jobs" %}
+    <p class="github-profile-text">
+      Firmy se na něj dívají. Robot ti zdarma poradí, co na něm zlepšit.
+    </p>
+    {% endif %}
     <label for="github-profile-input" class="github-profile-label">Adresa tvého GitHub profilu:</label>
     <div class="github-profile-row">
       <input id="github-profile-input" class="github-profile-input" required placeholder="https://github.com/username">
       <input type="submit" value="Otestovat" class="github-profile-button">
     </div>
+    {% if placement == "jobs" %}
+    <div class="github-profile-illustration" aria-hidden="true">
+      {{ "github"|icon }}
+      <span class="github-profile-illustration-tilde">~</span>
+      {{ img('static/chick-icon.svg', '', 207, 165, class='github-profile-illustration-chick') }}
+    </div>
+    {% endif %}
     <p class="github-profile-help">
       Po odeslání se ti otevře předvyplněné GitHub issue. Když jej vytvoříš, tak spustíš bota,
       který ti dá v komentáři zdarma zpětnou vazbu.
@@ -827,8 +841,15 @@
 {% endmacro %}
 
 
+{% macro jobs_form_box() %}
+<li class="jobs-item jobs-box form" data-jobs-box-position="{{ jobs_form_position }}">
+  {{ github_profile_form("jobs") }}
+</li>
+{% endmacro %}
+
+
 {% macro jobs_club_box() %}
-<li class="jobs-item club" data-jobs-club-position="{{ jobs_club_position }}">
+<li class="jobs-item jobs-box club" data-jobs-box-position="{{ jobs_club_position }}">
   <div class="jobs-club">
     <p class="jobs-club-heading">S hledáním práce ti pomůže komunita</p>
     <p class="jobs-club-text">

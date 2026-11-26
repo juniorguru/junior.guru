@@ -196,11 +196,11 @@ def test_club_box_follows_fourth_visible_regular_job_when_filtered(
     page.locator(".jobs-filters [data-jobs-tag='python']").click()
 
     items = page.locator(".jobs-item:visible").evaluate_all(
-        """items => items.map(item => item.classList.contains("club")
-            ? "club"
+        """items => items.map(item => item.classList.contains("jobs-box")
+            ? item.classList.contains("club") ? "club" : "form"
             : item.querySelector(".jobs-title-link").textContent.trim())"""
     )
     assert items == [
-        *["Regular 1", "Regular 3", "Regular 5", "Regular 7"],
+        *["Regular 1", "Regular 3", "form", "Regular 5", "Regular 7"],
         *["club", "Regular 9"],
     ]

@@ -26,6 +26,7 @@ from jg.coop.models.job import (
 )
 from jg.coop.models.jobs_listing import (
     JOBS_CLUB_POSITION,
+    JOBS_FORM_POSITION,
     JobsListingPage,
     get_jobs_filters,
     get_jobs_slots,
@@ -213,6 +214,7 @@ def get_jobs_context() -> dict:
         },
         "jobs_remote_tag_slug": REMOTE_TAG_SLUG,
         "jobs_club_position": JOBS_CLUB_POSITION,
+        "jobs_form_position": JOBS_FORM_POSITION,
         "club_jobs_channel_url": CLUB_JOBS_CHANNEL_URL,
     }
 

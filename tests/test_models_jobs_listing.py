@@ -220,24 +220,30 @@ def format_slots(slots: list[JobsSlot]) -> list[str]:
 @pytest.mark.parametrize(
     "jobs_count, manual_jobs_count, expected",
     [
-        pytest.param(0, 0, ["club"], id="nothing"),
+        pytest.param(0, 0, ["form", "club"], id="nothing"),
         pytest.param(
             0,
             2,
-            ["manual_job:m1", "manual_job:m2", "club"],
+            ["manual_job:m1", "manual_job:m2", "form", "club"],
             id="only manual",
         ),
-        pytest.param(1, 0, ["job:r1", "club"], id="one regular"),
+        pytest.param(1, 0, ["job:r1", "form", "club"], id="one regular"),
+        pytest.param(
+            3, 0, ["job:r1", "job:r2", "form", "job:r3", "club"], id="three regular"
+        ),
         pytest.param(
             4,
             0,
-            ["job:r1", "job:r2", "job:r3", "job:r4", "club"],
+            ["job:r1", "job:r2", "form", "job:r3", "job:r4", "club"],
             id="exactly enough regular",
         ),
         pytest.param(
             6,
             0,
-            ["job:r1", "job:r2", "job:r3", "job:r4", "club", "job:r5", "job:r6"],
+            [
+                *["job:r1", "job:r2", "form", "job:r3", "job:r4", "club"],
+                *["job:r5", "job:r6"],
+            ],
             id="only regular",
         ),
         pytest.param(
@@ -245,7 +251,7 @@ def format_slots(slots: list[JobsSlot]) -> list[str]:
             2,
             [
                 *["manual_job:m1", "manual_job:m2"],
-                *["job:r1", "job:r2", "job:r3", "job:r4", "club"],
+                *["job:r1", "job:r2", "form", "job:r3", "job:r4", "club"],
                 *["job:r5", "job:r6"],
             ],
             id="regular and manual",
@@ -272,5 +278,5 @@ def test_get_jobs_slots_highlighted_first():
 
     assert format_slots(slots) == [
         *["job:h1", "job:h2", "manual_job:m1"],
-        *["job:r1", "job:r2", "club"],
+        *["job:r1", "job:r2", "form", "club"],
     ]
