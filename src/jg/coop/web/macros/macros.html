@@ -515,9 +515,7 @@
 
 
 {% macro discord_dialog_utm(source, content=none) -%}
-  {%- set utm_params = {"utm_source": source, "utm_medium": "web", "utm_campaign": "jaro"} -%}
-  {%- if content %}{% set utm_params = dict(utm_params, utm_content=content) %}{% endif -%}
-  data-discord-dialog-utm="{{ utm_params|urlencode }}"
+  data-discord-dialog-utm="{{ club_utm_params(source, content)|urlencode }}"
 {%- endmacro %}
 
 
@@ -815,11 +813,7 @@
       "Otevřít inzerát v klubu",
       url=job.url,
       lazy=True,
-      utm_params={
-        "utm_source": "jobs-manual",
-        "utm_medium": "web",
-        "utm_campaign": "jaro",
-      },
+      utm_params=club_utm_params("jobs-manual"),
     ) }}
   </div>
 </li>
@@ -836,11 +830,7 @@
     </p>
     {{ club_teaser(
       "Nakoukni do klubu",
-      utm_params={
-        "utm_source": "jobs-box",
-        "utm_medium": "web",
-        "utm_campaign": "jaro",
-      },
+      utm_params=club_utm_params("jobs-box"),
     ) }}
   </div>
 </li>

@@ -1,6 +1,7 @@
 import pytest
 
 from jg.coop.lib.utm_params import (
+    club_utm_params,
     get_utm_params,
     pick_utm_params,
     put_utm_params,
@@ -68,3 +69,27 @@ def test_put_utm_params():
 )
 def test_pick_utm_params(params: dict, expected: dict):
     assert pick_utm_params(params) == expected
+
+
+@pytest.mark.parametrize(
+    "source, content, expected",
+    [
+        (
+            "jobs-box",
+            None,
+            {"utm_source": "jobs-box", "utm_medium": "web", "utm_campaign": "jaro"},
+        ),
+        (
+            "event-channel",
+            42,
+            {
+                "utm_source": "event-channel",
+                "utm_medium": "web",
+                "utm_campaign": "jaro",
+                "utm_content": "42",
+            },
+        ),
+    ],
+)
+def test_club_utm_params(source: str, content: str | int | None, expected: dict):
+    assert club_utm_params(source, content) == expected

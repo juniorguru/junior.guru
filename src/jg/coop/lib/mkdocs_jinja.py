@@ -10,6 +10,7 @@ from mkdocs.utils.templates import url_filter
 
 from jg.coop.lib import brand, json_ld, loggers, template_filters
 from jg.coop.lib.cache import get_jinja_cache
+from jg.coop.lib.utm_params import club_utm_params
 
 
 TEMPLATE_FILTERS = [
@@ -48,6 +49,7 @@ TEMPLATE_GLOBALS = {
     "brand": brand,
     "article_json_ld": json_ld.article_json_ld,
     "breadcrumb_list_json_ld": json_ld.breadcrumb_list_json_ld,
+    "club_utm_params": club_utm_params,
     "graph_json_ld": json_ld.graph_json_ld,
     "organization_json_ld": json_ld.organization_json_ld,
     "podcast_series_json_ld": json_ld.podcast_series_json_ld,

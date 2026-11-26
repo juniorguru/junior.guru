@@ -10,6 +10,22 @@ UTM_PARAM_NAMES = [
     "utm_term",
 ]
 
+CLUB_UTM_MEDIUM = "web"
+
+CLUB_UTM_CAMPAIGN = "jaro"
+
+
+def club_utm_params(source: str, content: str | int | None = None) -> dict[str, str]:
+    """UTM params for links from the site to the club, which identify the placement"""
+    utm_params = {
+        "utm_source": source,
+        "utm_medium": CLUB_UTM_MEDIUM,
+        "utm_campaign": CLUB_UTM_CAMPAIGN,
+    }
+    if content is not None:
+        utm_params["utm_content"] = str(content)
+    return utm_params
+
 
 def strip_params(url: str, param_names: list[str]) -> str:
     parts = urlparse(url)
