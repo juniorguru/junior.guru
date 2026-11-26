@@ -200,3 +200,13 @@ def test_add_job_note_jobs_channel_passes_utm_params_to_dialog(page: Page, jobs_
         "data-discord-dialog-utm",
         "utm_source=jobs-recruiters&utm_medium=web&utm_campaign=jaro",
     )
+
+
+def test_subscribe_button_passes_utm_params_to_dialog(page: Page, jobs_page):
+    jobs_page()
+    page.goto("/jobs/")
+
+    expect(page.locator(".jobs-subscribe-button")).to_have_attribute(
+        "data-discord-dialog-utm",
+        "utm_source=jobs-subscribe&utm_medium=web&utm_campaign=jaro",
+    )
