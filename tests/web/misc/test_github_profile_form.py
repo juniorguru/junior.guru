@@ -6,13 +6,17 @@ from playwright.sync_api import Page, expect
 from web.conftest import render_string
 
 
-@pytest.fixture
-def github_profile_page(page: Page, serve: Callable[[str], None]) -> None:
+def serve_form(serve: Callable[[str], None], placement: str = "handbook") -> None:
     source = (
         "{% from 'macros.html' import github_profile_form with context %}"
-        "{{ github_profile_form() }}"
+        f"{{{{ github_profile_form({placement!r}) }}}}"
     )
     serve(render_string(source, {}, "/"))
+
+
+@pytest.fixture
+def github_profile_page(page: Page, serve: Callable[[str], None]) -> None:
+    serve_form(serve)
     page.add_init_script("window.open = (...args) => { window.opened = args; };")
 
 
@@ -29,7 +33,9 @@ def test_opens_issue_with_username(page: Page, github_profile_page):
     assert parse_qs(url.query) == {
         "template": ["check.md"],
         "title": ["Zpětná vazba na profil @honzajavorek"],
-        "body": ["Kuřátko, mrkni prosím na @honzajavorek, díky!"],
+        "body": [
+            "Kuřátko, mrkni prosím na @honzajavorek, díky!\n\n<!-- src: handbook -->"
+        ],
     }
 
 
@@ -51,3 +57,13 @@ def test_submitting_twice_doesnt_accumulate_username(page: Page, github_profile_
     url = urlparse(page.evaluate("window.opened[0]"))
 
     assert parse_qs(url.query)["title"] == ["Zpětná vazba na profil @honzajavorek"]
+
+
+@pytest.mark.parametrize("placement", ["homepage", "jobs", "handbook"])
+def test_marks_placement(page: Page, serve: Callable[[str], None], placement: str):
+    serve_form(serve, placement)
+    page.add_init_script("window.open = (...args) => { window.opened = args; };")
+    submit(page, "honzajavorek")
+    url = urlparse(page.evaluate("window.opened[0]"))
+
+    assert parse_qs(url.query)["body"][0].endswith(f"<!-- src: {placement} -->")

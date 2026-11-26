@@ -16,7 +16,7 @@ template: main_handbook.html
 
 {{ illustration('static/illustrations/github-profile.webp') }}
 
-{{ github_profile_form() }}
+{{ github_profile_form("handbook") }}
 
 [TOC]
 

@@ -214,4 +214,4 @@ Manažeři a senioři občas ano, ale podstatné je, jestli jim dáš v CVčku p
 
 Sekce [GitHub jako vitrínka](github-profile.md#github-jako-vitrinka) v návodu na GitHub profil nebo [Projekty](cv.md#6-projekty) v návodu na CV ti dají praktické tipy, jak GitHub používat jako dílnu a zároveň zajistit, že pohovorující nebudou zakopávát o nepořádek.
 
-{{ github_profile_form() }}
+{{ github_profile_form("handbook") }}
