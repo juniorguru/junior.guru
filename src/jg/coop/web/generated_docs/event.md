@@ -1,4 +1,4 @@
-{% from 'macros.html' import event_video_card, lead with context %}
+{% from 'macros.html' import discord_dialog_utm, event_video_card, lead with context %}
 
 # {{ event.get_full_title() }}
 
@@ -76,9 +76,9 @@
     <span>
       Pokud už máš přístup do klubového Discordu,
       {% if event.club_recording_url %}
-        otevři si <a href="{{ event.club_recording_url }}" target="_blank" rel="noopener">odkaz na záznam</a> a <strong>sleduj</strong>!
+        otevři si <a href="{{ event.club_recording_url }}" target="_blank" rel="noopener" {{ discord_dialog_utm("event-recording", event.id) }}>odkaz na záznam</a> a <strong>sleduj</strong>!
       {% else %}
-        jdi <strong>{{ '{:%-d.%-m.%Y v %-H:%M}'.format(event.start_at_prg) }}</strong> do kanálu <a href="{{ club_events_channel_url }}" target="_blank" rel="noopener">#přednášky</a> a čekej, až to začne.
+        jdi <strong>{{ '{:%-d.%-m.%Y v %-H:%M}'.format(event.start_at_prg) }}</strong> do kanálu <a href="{{ club_events_channel_url }}" target="_blank" rel="noopener" {{ discord_dialog_utm("event-channel", event.id) }}>#přednášky</a> a čekej, až to začne.
       {% endif %}
     </span>
   </li>

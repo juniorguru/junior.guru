@@ -1,5 +1,5 @@
 {% extends 'main_sidebar.html' %}
-{% from 'macros.html' import logo with context %}
+{% from 'macros.html' import discord_dialog_utm, logo with context %}
 
 
 {% block extra_header %}
@@ -59,7 +59,7 @@
                   ,
                 {% endif %}
               {% endif %}
-              <a href="{{ related_channel.url }}">#{{ related_channel.name }}</a>
+              <a href="{{ related_channel.url }}" {{ discord_dialog_utm("handbook-channels", page.file.name) }}>#{{ related_channel.name }}</a>
             {% endfor %}
             se v poslední době napsalo <strong>{{ related_channels_monthly_size|thousands }} písmenek</strong> měsíčně.
           </p>
