@@ -36,6 +36,10 @@ from jg.coop.lib.job_urls import (
             "profesiask#O5372759",
             "https://www.profesia.sk/O5372759",
         ),
+        (
+            "getjob#it-technik-482786834164",
+            "https://getjob.cz/prace/it-technik-482786834164",
+        ),
     ],
 )
 def test_id_to_url(id: str, expected: str):
@@ -120,6 +124,26 @@ def test_id_to_url_raises_not_implemented_error_for_unknown_name():
         ),
         (
             "https://www.profesia.sk/praca/informacne-technologie/",
+            None,
+        ),
+        (
+            "https://getjob.cz/prace/it-technik-482786834164",
+            "getjob#it-technik-482786834164",
+        ),
+        (
+            "https://getjob.cz/prace/it-technik-482786834164?utm_source=juniorguru",
+            "getjob#it-technik-482786834164",
+        ),
+        (
+            "https://getjob.cz/prace",
+            None,
+        ),
+        (
+            "https://getjob.cz/prace?obor=IT+a+technologie",
+            None,
+        ),
+        (
+            "https://getjob.cz/api/jobs/board?nabidka=it-technik-482786834164",
             None,
         ),
     ],
