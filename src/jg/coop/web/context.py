@@ -208,9 +208,6 @@ def get_love_context(today: date) -> dict:
         "donations_coverage_ptc": coverage_ptc(
             revenue_breakdown, cost, TransactionsCategory.DONATIONS
         ),
-        "memberships_coverage_ptc": coverage_ptc(
-            revenue_breakdown, cost, TransactionsCategory.MEMBERSHIPS
-        ),
     }
 
 
