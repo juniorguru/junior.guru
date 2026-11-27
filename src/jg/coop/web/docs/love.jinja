@@ -5,7 +5,7 @@ template: main_love.html
 thumbnail_button_icon: heart
 ---
 
-{% from 'macros.html' import lead, note, markdown, img, logos_list, juniors_candidate, juniors_story, jobs_posting_note with context %}
+{% from 'macros.html' import img, juniors_story, lead, logos_list, markdown with context %}
 
 <h1>Pošli LOVE</h1>
 {% call lead() %}
@@ -169,64 +169,3 @@ Lidem, kteří se chtějí naučit programovat a najít první práci v IT. A
 {% call markdown() %}
 Projekt tvoří **Honza Javorek**, jeden člověk na volné noze. Všechno má otevřené: [čísla](about/index.md), [zdrojový kód](https://github.com/juniorguru/) i [poznámky na blogu](https://honzajavorek.cz/blog/).
 {% endcall %}
-
-<h2>Pro firmy</h2>
-{% call markdown() %}
-Firmy můžou junior.guru podpořit také. Ceník tady nenajdete, stačí napsat a domluvíme se.
-{% endcall %}
-
-{% call note(standout=True) -%}
-  {{ 'heart-fill'|icon }}
-  **Najali jste juniora přes junior.guru a jste spokojení? Podpořte projekt.**
-  Přesně takhle to udělala firma Logical.
-{%- endcall %}
-
-{% call markdown() %}
-Proč podpořit junior.guru:
-
-- **Je to zdroj ověřených a šikovných juniorů** s různým zázemím, kteří jsou připravení nastoupit.
-- **Komunita si toho všimne.** Chodí sem začínající programátoři a testeři, ale i senioři, kteří junior.guru doporučují dál.
-
-Co za to můžete dostat:
-
-- místa v [klubu](club.md) pro lidi z vaší firmy,
-- logo na webu,
-- pokud učíte programování, zvýrazněný zápis v [katalogu kurzů](courses.md).
-{% endcall %}
-
-<div class="c2a highlighted">
-  <p>
-    <a href="mailto:{{ brand.CONTACT_EMAIL }}" class="c2a-button pulse">
-      {{ brand.CONTACT_EMAIL }}
-    </a>
-  </p>
-  <p class="c2a-text small">
-    <a href="{{ pages|docs_url('about/sponsors-partners.md')|url }}">Kdo už projekt podpořil</a>
-    ·
-    <a href="{{ pages|docs_url('tos.md')|url }}">Obchodní podmínky</a>
-  </p>
-</div>
-
-<h3>Hledáte juniora?</h3>
-{% call markdown() %}
-Tihle zrovna hledají práci. Vybírat z <a href="{{ pages|docs_url('candidates.jinja')|url }}">kandidátů</a> můžete zdarma a oslovujete je napřímo.
-{% endcall %}
-
-<div class="love-juniors juniors-column">
-  {% for candidate in candidates_promo[:2] %}
-    {{ juniors_candidate(candidate) }}
-  {% endfor %}
-  <p class="juniors-listing-link">
-    <a href="{{ pages|docs_url('candidates.jinja')|url }}">
-      {% set remaining_candidates_count = candidates_count - 2 %}
-      {{ remaining_candidates_count|nplurals("Další", "Další", "Dalších") }}
-      {{ remaining_candidates_count }}
-      {{ remaining_candidates_count|nplurals("kandidát", "kandidáti", "kandidátů") }}
-    </a>
-  </p>
-</div>
-
-{% call markdown() %}
-Inzerovat na <a href="{{ pages|docs_url('jobs.jinja')|url }}">pracovním portálu</a> je zdarma.
-{% endcall %}
-{{ jobs_posting_note("love") }}
