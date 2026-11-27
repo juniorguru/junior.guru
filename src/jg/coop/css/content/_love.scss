@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "sass:map";
 
 @keyframes heartbeat {
@@ -83,4 +84,51 @@
   flex-direction: column;
   gap: $spacer;
   margin-bottom: $spacer;
+}
+
+.love-progress-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.love-progress-row {
+  display: flex;
+  gap: $spacer;
+  align-items: center;
+  width: 100%;
+  max-width: 30rem;
+  margin-bottom: $spacer;
+}
+
+.love-progress-heart {
+  flex: 0 0 auto;
+}
+
+.love-progress {
+  @extend .progress;
+  flex: 1 1 auto;
+  height: 1.8rem;
+  background-color: color.mix($jg-pink, $jg-white, 20%);
+}
+
+.love-progress-bar {
+  @extend .progress-bar;
+  font-weight: 600;
+  color: $jg-white;
+  background-color: $jg-pink;
+  transform-origin: left center;
+  animation: progress-breathe 5s ease-in-out infinite;
+}
+
+.love-progress-text {
+  max-width: 30rem;
+  margin-bottom: map.get($spacers, 2);
+}
+
+.love-progress-thanks {
+  @extend .fs-4;
+  font-weight: $font-weight-bold;
+  color: $jg-pink;
 }

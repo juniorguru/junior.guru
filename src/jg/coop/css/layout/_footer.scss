@@ -1,7 +1,7 @@
 @use "sass:map";
 @use "sass:color";
 
-@keyframes footer-progress-breathe {
+@keyframes progress-breathe {
   0%,
   68% {
     transform: scaleX(1);
@@ -166,7 +166,7 @@ $footer-spacer-md: $spacer * 2;
   color: $jg-white;
   background-color: $jg-pink;
   transform-origin: left center;
-  animation: footer-progress-breathe 5s ease-in-out infinite;
+  animation: progress-breathe 5s ease-in-out infinite;
 }
 
 .footer-goal {

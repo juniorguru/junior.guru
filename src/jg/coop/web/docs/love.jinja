@@ -12,8 +12,25 @@ thumbnail_button_icon: heart
   Pomohlo ti junior.guru? Ukázalo ti cestu k programování? K lepší práci? Všechno je tady zdarma a bez reklam, ale provoz zdarma není. Pokud chceš poděkovat, pošli příspěvek.
 {% endcall %}
 
-<div class="text-center standout">
-{{ img('static/heart.svg', 'srdíčko', 80, 80, lazy=False) }}
+<div class="love-progress-box standout">
+  {% if donations_coverage_ptc is not none %}
+  <div class="love-progress-row">
+    {{ img('static/heart.svg', 'srdíčko', 60, 60, lazy=False, class="love-progress-heart heartbeat") }}
+    <div class="love-progress" role="progressbar" aria-label="Kolik nákladů pokryly dobrovolné příspěvky"
+      aria-valuenow="{{ donations_coverage_ptc }}" aria-valuemin="0" aria-valuemax="100">
+      <div class="love-progress-bar" style="width: {{ [donations_coverage_ptc, 100]|min }}%;">
+        {{ donations_coverage_ptc }} %
+      </div>
+    </div>
+  </div>
+  <p class="love-progress-text">
+    Za posledních 12 měsíců pokryly dobrovolné příspěvky <strong>{{ donations_coverage_ptc }} %</strong> nákladů na provoz junior.guru.
+    <a href="{{ pages|docs_url('about/finances.md')|url }}">Všechna čísla</a>
+  </p>
+  {% else %}
+  {{ img('static/heart.svg', 'srdíčko', 80, 80, lazy=False, class="heartbeat") }}
+  {% endif %}
+  <p class="love-progress-thanks">Díky moc!</p>
 </div>
 
 <div class="love-donate">
@@ -100,14 +117,6 @@ thumbnail_button_icon: heart
   {% endfor %}
   </span>
 </div>
-
-{% if donations_coverage_ptc is not none %}
-{% call note(standout=True) -%}
-  {{ 'piggy-bank'|icon }}
-  Za posledních 12 měsíců pokryly dobrovolné příspěvky **{{ donations_coverage_ptc }} %** nákladů na provoz junior.guru.
-  Všechna čísla jsou v [transparentních financích](about/finances.md).
-{%- endcall %}
-{% endif %}
 
 <h2>Kolik stojí „zdarma“ a bez reklam</h2>
 {% call markdown() %}
