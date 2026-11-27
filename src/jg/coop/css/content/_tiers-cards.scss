@@ -67,6 +67,13 @@
   border-color: color.adjust($jg-blue-light, $lightness: -2%);
 }
 
+.tier-card-price {
+  @extend .fs-5;
+  width: 100%;
+  margin-bottom: map.get($spacers, 2);
+}
+
 .tier-card-footer small {
+  width: 100%;
   margin-top: map.get($spacers, 2);
 }
