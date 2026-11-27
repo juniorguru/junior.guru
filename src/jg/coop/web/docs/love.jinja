@@ -5,7 +5,7 @@ template: main_love.html
 thumbnail_button_icon: heart
 ---
 
-{% from 'macros.html' import img, jobs_posting_note, juniors, lead, logos_list, markdown with context %}
+{% from 'macros.html' import club_url, discord_dialog_utm, img, juniors, lead, logos_list with context %}
 
 <h1>Pošli LOVE</h1>
 {% call lead() %}
@@ -145,12 +145,12 @@ thumbnail_button_icon: heart
 </div>
 </div>
 
+<p>
+  Inzerce na <a href="{{ pages|docs_url('jobs.jinja')|url }}">pracovním portálu</a> je zdarma.
+  Vytvořte si zdarma <a href="{{ club_url("love") }}">účet v klubu</a> a založte nové vlákno v kanálu <a href="{{ club_jobs_channel_url }}" {{ discord_dialog_utm("love") }}>#práce-inzeráty</a>.
+  Do 24h se inzerát objeví na webu. Zvýrazněný a nahoře!
+</p>
+
 <div class="standout">
   {{ juniors("Šikovní junioři čekající na příležitost", "Junioři, kterým jste už pomohli") }}
 </div>
-
-<h2>Pracovní inzeráty</h2>
-{% call markdown() %}
-Inzerovat na <a href="{{ pages|docs_url('jobs.jinja')|url }}">pracovním portálu</a> je zdarma.
-{% endcall %}
-{{ jobs_posting_note("love") }}
