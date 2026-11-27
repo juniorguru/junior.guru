@@ -32,7 +32,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 2 * $spacer;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   padding: 2 * $spacer;
   margin-bottom: $spacer;
