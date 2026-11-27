@@ -77,7 +77,7 @@ thumbnail_button_icon: heart
     <strong class="tier-card-price">od {{ github_sponsors_czk }} Kč/měs</strong>
     <a class="btn btn-dark" href="https://github.com/sponsors/honzajavorek/" target="_blank" rel="noopener">
       {{ 'github'|icon }}
-      Sponzorovat na GitHubu
+      Podpoř na GitHubu
     </a>
     {% set sponsors_count = sponsors_github|length %}
     {% if sponsors_count %}
@@ -104,7 +104,7 @@ thumbnail_button_icon: heart
     <strong class="tier-card-price">299 Kč/měs</strong>
     <a class="btn btn-primary" href="https://juniorguru.memberful.com/checkout?plan=143775" target="_blank" rel="noopener">
       {{ 'person-circle'|icon }}
-      Přidat se do klubu
+      Zkus klub
     </a>
     <small>
       jako
@@ -132,9 +132,15 @@ thumbnail_button_icon: heart
     <strong class="tier-card-price">Částka dohodou</strong>
     <a class="btn btn-success" href="mailto:{{ brand.CONTACT_EMAIL }}">
       {{ 'envelope-fill'|icon }}
-      Napsat e-mail
+      Napiš na {{ brand.CONTACT_EMAIL }}
     </a>
-    <small><a href="#pro-firmy">Proč podpořit junior.guru jako firma</a></small>
+    {% set sponsors_total_count = sponsors|length + sponsors_past|length %}
+    <small>
+      jako
+      {{ sponsors_total_count }}
+      {{ sponsors_total_count|nplurals("sponzor", "sponzoři", "sponzorů") }}
+      v minulosti
+    </small>
   </p>
 </div>
 </div>
@@ -164,7 +170,7 @@ Lidem, kteří se chtějí naučit programovat a najít první práci v IT. A
 Projekt tvoří **Honza Javorek**, jeden člověk na volné noze. Všechno má otevřené: [čísla](about/index.md), [zdrojový kód](https://github.com/juniorguru/) i [poznámky na blogu](https://honzajavorek.cz/blog/).
 {% endcall %}
 
-<h2 id="pro-firmy">Pro firmy</h2>
+<h2>Pro firmy</h2>
 {% call markdown() %}
 Firmy můžou junior.guru podpořit také. Ceník tady nenajdete, stačí napsat a domluvíme se.
 {% endcall %}
