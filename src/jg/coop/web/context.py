@@ -191,10 +191,18 @@ def on_docs_context(context):
 
 
 def get_love_context(today: date) -> dict:
-    revenue_breakdown = Transaction.revenue_ttm_breakdown(today)
-    cost = Transaction.cost_ttm(today)
+    return build_love_context(
+        Transaction.revenue_ttm_breakdown(today),
+        Transaction.cost_ttm(today),
+        github_sponsors_czk=ExchangeRate.from_currency(4, "USD"),
+    )
+
+
+def build_love_context(
+    revenue_breakdown: dict[str, int], cost: int, github_sponsors_czk: int
+) -> dict:
     return {
-        "github_sponsors_czk": ExchangeRate.from_currency(4, "USD"),
+        "github_sponsors_czk": github_sponsors_czk,
         "donation_amount_czk": DONATION_AMOUNT_CZK,
         "donation_qr_svg": Markup(
             qr_payment_svg(
