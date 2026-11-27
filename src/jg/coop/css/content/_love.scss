@@ -93,23 +93,12 @@
   text-align: center;
 }
 
-.love-progress-row {
-  display: flex;
-  gap: $spacer;
-  align-items: center;
-  width: 100%;
-  max-width: 30rem;
-  margin-bottom: $spacer;
-}
-
-.love-progress-heart {
-  flex: 0 0 auto;
-}
-
 .love-progress {
   @extend .progress;
-  flex: 1 1 auto;
+  width: 100%;
+  max-width: 30rem;
   height: 1.8rem;
+  margin: $spacer 0;
   background-color: color.mix($jg-pink, $jg-white, 20%);
 }
 
