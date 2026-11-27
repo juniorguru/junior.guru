@@ -2,7 +2,12 @@ from textwrap import dedent
 
 import pytest
 
-from jg.coop.cli.tidy import get_jinja_calls, get_jinja_imports
+from jg.coop.cli.tidy import (
+    get_jinja_calls,
+    get_jinja_imports,
+    get_unused_jinja_imports,
+    remove_unused_jinja_imports,
+)
 
 
 @pytest.mark.parametrize(
@@ -126,3 +131,23 @@ def test_get_jinja_imports_raises(markup: str):
 )
 def test_get_jinja_calls(markup: str, expected: set[str]):
     assert get_jinja_calls(markup) == expected
+
+
+MARKUP_WITH_GLOBAL_CALL = dedent(
+    """
+        {% from 'macros.html' import img, lead, note with context %}
+        {{ graph_json_ld(website_json_ld()) }}
+        {% call lead() %}Ahoj{% endcall %}
+        {{ img('a.svg', 'A') }}
+    """
+)
+
+
+def test_get_unused_jinja_imports():
+    assert get_unused_jinja_imports(MARKUP_WITH_GLOBAL_CALL) == {"note"}
+
+
+def test_remove_unused_jinja_imports_keeps_globals_out():
+    markup = remove_unused_jinja_imports(MARKUP_WITH_GLOBAL_CALL)
+
+    assert "{% from 'macros.html' import img, lead with context %}" in markup

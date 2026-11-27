@@ -32,12 +32,6 @@ def qr_payment_svg(
     return svg[svg.index("<svg") :]
 
 
-def qr_payment_spayd(
-    account: str, bic: str, amount: int, variable_symbol: str, message: str
-) -> str:
-    return get_generator(account, bic, amount, variable_symbol, message).get_text()
-
-
 def get_generator(
     account: str, bic: str, amount: int, variable_symbol: str, message: str
 ) -> QRPlatbaGenerator:

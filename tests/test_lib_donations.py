@@ -1,6 +1,7 @@
 import pytest
 
-from jg.coop.lib.donations import coverage_ptc, qr_payment_spayd, qr_payment_svg
+from jg.coop.lib.brand import BANK_ACCOUNT, BANK_BIC, BANK_IBAN
+from jg.coop.lib.donations import coverage_ptc, get_generator, qr_payment_svg
 
 
 @pytest.mark.parametrize(
@@ -24,16 +25,31 @@ def test_coverage_ptc_no_cost(cost: int):
     assert coverage_ptc({"donations": 1000}, cost, "donations") is None
 
 
-def test_qr_payment_spayd():
-    assert qr_payment_spayd(
+def test_get_generator():
+    generator = get_generator(
         "2501717332/2010", "FIOBCZPPXXX", 499, "444222", "LOVE pro junior.guru"
-    ) == (
+    )
+
+    assert generator.get_text() == (
         "SPD*1.0*ACC:CZ8420100000002501717332+FIOBCZPPXXX*AM:499.00*CC:CZK"
         "*MSG:LOVE pro junior.guru*X-VS:444222"
     )
+
+
+def test_brand_iban_matches_account():
+    generator = get_generator(BANK_ACCOUNT, BANK_BIC, 499, "444222", "LOVE")
+
+    assert f"ACC:{BANK_IBAN.replace(' ', '')}+{BANK_BIC}*" in generator.get_text()
 
 
 def test_qr_payment_svg_is_inline_svg():
     svg = qr_payment_svg("2501717332/2010", "FIOBCZPPXXX", 499, "444222", "LOVE")
 
     assert svg.startswith("<svg ")
+
+
+def test_qr_payment_svg_encodes_payment():
+    svg_499 = qr_payment_svg("2501717332/2010", "FIOBCZPPXXX", 499, "444222", "LOVE")
+    svg_500 = qr_payment_svg("2501717332/2010", "FIOBCZPPXXX", 500, "444222", "LOVE")
+
+    assert svg_499 != svg_500
