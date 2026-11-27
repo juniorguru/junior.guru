@@ -112,6 +112,24 @@ thumbnail_button_icon: heart
     </small>
   </p>
 </div>
+
+<div class="tiers-card wide">
+  <h3 class="tiers-card-header">Pro firmy</h3>
+  <div class="card-body">
+    <ul class="card-text">
+      <li>Napište, kolik a jak často chcete přispět. Ceník tady není, domluvíme se.</li>
+      <li>Za podporu můžete dostat místa v <a href="{{ pages|docs_url('club.md')|url }}">klubu</a> pro lidi z vaší firmy, logo na webu, nebo zvýrazněný zápis v <a href="{{ pages|docs_url('courses.md')|url }}">katalogu kurzů</a></li>
+      <li>Na fakturu, neplátce DPH</li>
+    </ul>
+  </div>
+  <p class="tier-card-footer">
+    <a class="btn btn-success" href="mailto:{{ brand.CONTACT_EMAIL }}">
+      {{ 'envelope-fill'|icon }}
+      {{ brand.CONTACT_EMAIL }}
+    </a>
+    <small><a href="#pro-firmy">Proč podpořit junior.guru jako firma</a></small>
+  </p>
+</div>
 </div>
 
 <h2>Kolik stojí „zdarma“ a bez reklam</h2>
@@ -139,7 +157,7 @@ Lidem, kteří se chtějí naučit programovat a najít první práci v IT. A
 Projekt tvoří **Honza Javorek**, jeden člověk na volné noze. Všechno má otevřené: [čísla](about/index.md), [zdrojový kód](https://github.com/juniorguru/) i [poznámky na blogu](https://honzajavorek.cz/blog/).
 {% endcall %}
 
-<h2>Pro firmy</h2>
+<h2 id="pro-firmy">Pro firmy</h2>
 {% call markdown() %}
 Firmy můžou junior.guru podpořit také. Ceník tady nenajdete, stačí napsat a domluvíme se.
 {% endcall %}

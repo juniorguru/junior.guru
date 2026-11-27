@@ -36,6 +36,15 @@
   }
 }
 
+.tiers-cards .tiers-card.wide {
+  @include media-breakpoint-up(sm) {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    margin-right: 0;
+  }
+}
+
 .tiers-card-header {
   @extend .card-header;
   @extend .fs-5;
