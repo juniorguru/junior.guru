@@ -149,6 +149,83 @@
     {
       "type": "EMPATHY",
       "profile": {
+        "firstName": "Martin",
+        "lastName": "Šotnar",
+        "occupation": "Frontend Developer Trainee | JavaScript, TypeScript, React",
+        "id": "1332351529",
+        "publicId": "sotnar",
+        "profileId": "ACoAAE9qEikBy98vuvk8guHa2u80sek2g2OsTAg"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jan",
+        "lastName": "Kuklínek",
+        "occupation": "Sitting kills.",
+        "id": "340239742",
+        "publicId": "jan-kuklínek-bbab4195",
+        "profileId": "ACoAABRHpX4BrOHNYEbhnCcJ5L0cp3eSUM5rdhs"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Sarka",
+        "lastName": "Melicharova",
+        "occupation": "Czech language teacher for foreigners | Czech for life & Czech for exams (A2, B1, ...) | Czech Buddy",
+        "id": "648814916",
+        "publicId": "melicharova",
+        "profileId": "ACoAACasIUQBi0zapOVDWOPcCXCviPxBdRa-Lgo"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Vendula",
+        "lastName": "Krajíčková",
+        "occupation": "Frontend vývojářka 🚀 | React, Next.js, TypeScript | Ex-BlueGhost 👻💙",
+        "id": "1145616814",
+        "publicId": "vendula-krajickova",
+        "profileId": "ACoAAERIua4Bk44zfiGE6PT1BmSNoKdqiNkFOYc"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Marie",
+        "lastName": "B.",
+        "occupation": "Programming and enjoying life",
+        "id": "8228748",
+        "publicId": "mariebezdekova",
+        "profileId": "ACoAAAB9j4wBDIeIfATcp9eisEy12ZHr2-zh1sk"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Nohejl",
+        "occupation": "Engineering Manager at STRV",
+        "id": "101169587",
+        "publicId": "petrnohejl",
+        "profileId": "ACoAAAYHubMB9VrCnZVPfEOx_S9JkE-QD5USw1A"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Pavel",
+        "lastName": "Kysilka",
+        "occupation": "On-line Marketing Specialist",
+        "id": "110827462",
+        "publicId": "pavelkysilka",
+        "profileId": "ACoAAAabF8YB6nt_6qv_hKIAhG6RXt7U6z-IGiY"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
         "firstName": "Lukáš",
         "lastName": "Lacko",
         "occupation": "Technical Consultant",
@@ -178,87 +255,10 @@
         "publicId": "monika-kvapilova",
         "profileId": "ACoAABsqv0sBPIbFghQbKci6xr0Xm9coUGwBI5s"
       }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Jiri",
-        "lastName": "Gunka",
-        "occupation": "cyp",
-        "id": "106076066",
-        "publicId": "jiri-gunka",
-        "profileId": "ACoAAAZSl6IBReZE2DpEw1yYFc7o_nXXv7ld64Y"
-      }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Chris",
-        "lastName": "Ward",
-        "occupation": "🚀 20+ years Engineering Leadership | Full-stack | Development | Testing | Data | AI | DevOps",
-        "id": "958428398",
-        "publicId": "chris-ward-cz",
-        "profileId": "ACoAADkgdO4B-i1aIhDo75mkxzpfRqNBaEp68D8"
-      }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Martin",
-        "lastName": "Bílek",
-        "occupation": "Founder / Entrepreneur / Mr-Slinky.com / Fragaria.cz / Karmen.tech",
-        "id": "151734618",
-        "publicId": "martin-bílek-47699542",
-        "profileId": "ACoAAAkLSVoBfPqrzm1C_VhjYOiboCuVtUGPjIc"
-      }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Lenka",
-        "lastName": "Hanzlíková",
-        "occupation": "Ikigai Coach & Lecturer | BNI Community Builder | Event Coordinator | Longevity & Molecular Hydrogen",
-        "id": "817356702",
-        "publicId": "lenkahanzlikova",
-        "profileId": "ACoAADC3354Br3OpxnhxdVHICYYGqHRmSadi3bE"
-      }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Lukáš",
-        "lastName": "Názer",
-        "occupation": "Security Management | Operations Management | Team Leadership | 16+ Years in Public Safety",
-        "id": "1490386548",
-        "publicId": "lukáš-názer-270164357",
-        "profileId": "ACoAAFjVfnQBRiWDVYgeRaVNR9CkNSlnACEsxsY"
-      }
-    },
-    {
-      "type": "PRAISE",
-      "profile": {
-        "firstName": "Jitka",
-        "lastName": "Kvartkova",
-        "occupation": "Mentor for Women 40+ 🌞 Marketing for Small Businesses 🌞 Linkedin 🌞 B2B",
-        "id": "62569112",
-        "publicId": "jitkakvartkova",
-        "profileId": "ACoAAAO6upgBnCHqSe9ozeExFKQdex_hxEBADX8"
-      }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Jiří",
-        "lastName": "Vicherek",
-        "occupation": "Předseda České startupové asociace",
-        "id": "74476785",
-        "publicId": "vicherek",
-        "profileId": "ACoAAARwbPEBJ-4PcqhyrjMq_qci_GH59b-vNUc"
-      }
     }
   ],
   "numShares": 1,
-  "numLikes": 34,
+  "numLikes": 41,
   "numComments": 7,
   "canReact": true,
   "canPostComments": true,

@@ -28,7 +28,7 @@
       "numComments": 1,
       "reactionTypeCounts": [],
       "author": {
-        "firstName": "Jimi",
+        "firstName": "Jiří",
         "lastName": "Mikulášek",
         "occupation": "Lead Software Engineer, mentor and coach. Supporting SW engineers and projects in reaching the mastery.",
         "id": "18520673",
@@ -173,9 +173,20 @@
   ],
   "reactions": [
     {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Monika",
+        "lastName": "Hušková",
+        "occupation": "☝️ Content marketing pro finance a B2B ■ Obsah, který pomáhá vašim klientům i byznysu a neskončí v šuplíku ■ Poradím, vytvořím, naučím ■ Strategie, AI & Tech",
+        "id": "536994862",
+        "publicId": "monika-huskova",
+        "profileId": "ACoAACAB5C4BoyJ1FbR9Rj67GHUG2Sz0H4TbL20"
+      }
+    },
+    {
       "type": "APPRECIATION",
       "profile": {
-        "firstName": "Jimi",
+        "firstName": "Jiří",
         "lastName": "Mikulášek",
         "occupation": "Lead Software Engineer, mentor and coach. Supporting SW engineers and projects in reaching the mastery.",
         "id": "18520673",
@@ -270,21 +281,10 @@
         "publicId": "tomaskruzik",
         "profileId": "ACoAAAXbEwcBf19SyKzj7a5LlpRNFfBxeKvIjM4"
       }
-    },
-    {
-      "type": "APPRECIATION",
-      "profile": {
-        "firstName": "Jakub",
-        "lastName": "Červinka",
-        "occupation": "Python developer and lecturer",
-        "id": "355842259",
-        "publicId": "jakub-červinka",
-        "profileId": "ACoAABU1uNMBxEkN7xMohKuhfytB97ZjK-tfEKo"
-      }
     }
   ],
   "numShares": 1,
-  "numLikes": 51,
+  "numLikes": 52,
   "numComments": 10,
   "canReact": true,
   "canPostComments": true,

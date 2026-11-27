@@ -298,11 +298,13 @@
 {"month": "2026-10", "name": "newsletter", "count": 738}
 {"month": "2026-10", "name": "youtube", "count": 582}
 {"month": "2026-11", "name": "facebook", "count": 411}
-{"month": "2026-11", "name": "facebook_personal", "count": 665}
+{"month": "2026-11", "name": "facebook_personal", "count": 666}
 {"month": "2026-11", "name": "github", "count": 26}
 {"month": "2026-11", "name": "github_personal", "count": 316}
+{"month": "2026-11", "name": "instagram", "count": 642}
+{"month": "2026-11", "name": "instagram_personal", "count": 324}
 {"month": "2026-11", "name": "linkedin", "count": 1045}
-{"month": "2026-11", "name": "linkedin_personal", "count": 4823}
+{"month": "2026-11", "name": "linkedin_personal", "count": 4828}
 {"month": "2026-11", "name": "mastodon", "count": 499}
 {"month": "2026-11", "name": "newsletter", "count": 738}
 {"month": "2026-11", "name": "youtube", "count": 587}
