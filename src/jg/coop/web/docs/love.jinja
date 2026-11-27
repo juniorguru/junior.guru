@@ -5,7 +5,7 @@ template: main_love.html
 thumbnail_button_icon: heart
 ---
 
-{% from 'macros.html' import img, jobs_posting_note, juniors_candidate, juniors_story, lead, logos_list, markdown with context %}
+{% from 'macros.html' import img, jobs_posting_note, juniors, lead, logos_list, markdown with context %}
 
 <h1>Pošli LOVE</h1>
 {% call lead() %}
@@ -145,43 +145,15 @@ thumbnail_button_icon: heart
 </div>
 </div>
 
-<h2>Komu tím prospěješ</h2>
-{% call markdown() %}
-Lidem, kteří se chtějí naučit programovat a najít první práci v IT. Aby jejich cesta nebyla past vedle pasti. Aby měli nezávislé informace o kurzech a podpůrnou komunitu, kde budou vítaní. Tady je pár z nich:
-{% endcall %}
-
-<div class="love-juniors juniors-column yellow">
-  {% for story_page in stories_pages[:3] %}
-    {{ juniors_story(story_page) }}
-  {% endfor %}
-  <p class="juniors-listing-link">
-    <a href="{{ pages|docs_url('stories.md')|url }}#pribehy-z-juniorguru">Další příběhy</a>
-  </p>
+<div class="standout">
+  {{ juniors("Šikovní junioři čekající na příležitost", "Junioři, kterým jste už pomohli") }}
 </div>
 
 {% call markdown() %}
 Projekt tvoří **Honza Javorek**, jeden člověk na volné noze. Všechno má otevřené: [čísla](about/index.md), [zdrojový kód](https://github.com/juniorguru/) i [poznámky na blogu](https://honzajavorek.cz/blog/).
 {% endcall %}
 
-<h2>Hledáte juniora?</h2>
-{% call markdown() %}
-Tihle zrovna hledají práci. Vybírat z <a href="{{ pages|docs_url('candidates.jinja')|url }}">kandidátů</a> můžete zdarma a oslovujete je napřímo.
-{% endcall %}
-
-<div class="love-juniors juniors-column">
-  {% for candidate in candidates_promo[:2] %}
-    {{ juniors_candidate(candidate) }}
-  {% endfor %}
-  <p class="juniors-listing-link">
-    <a href="{{ pages|docs_url('candidates.jinja')|url }}">
-      {% set remaining_candidates_count = candidates_count - 2 %}
-      {{ remaining_candidates_count|nplurals("Další", "Další", "Dalších") }}
-      {{ remaining_candidates_count }}
-      {{ remaining_candidates_count|nplurals("kandidát", "kandidáti", "kandidátů") }}
-    </a>
-  </p>
-</div>
-
+<h2>Pracovní inzeráty</h2>
 {% call markdown() %}
 Inzerovat na <a href="{{ pages|docs_url('jobs.jinja')|url }}">pracovním portálu</a> je zdarma.
 {% endcall %}

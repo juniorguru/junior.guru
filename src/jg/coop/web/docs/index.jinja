@@ -5,7 +5,7 @@ description: Průvodce a komunita pro začátečníky v programování, testová
 thumbnail_subheading: junior.guru
 ---
 
-{% from 'macros.html' import blockquote_avatar, github_profile_form, juniors_candidate, juniors_story, logo with context %}
+{% from 'macros.html' import blockquote_avatar, github_profile_form, juniors, logo with context %}
 
 <script type="application/ld+json">{{ graph_json_ld(website_json_ld(), organization_json_ld())|json_ld }}</script>
 
@@ -295,37 +295,5 @@ thumbnail_subheading: junior.guru
 </div>
 </section>
 <section class="section">
-  <div class="juniors">
-    <div class="juniors-column">
-      <h2>Právě hledají práci</h2>
-      {% for candidate in candidates_promo %}
-        {{ juniors_candidate(candidate) }}
-      {% endfor %}
-      <p class="juniors-listing-link">
-        <a href="{{ pages|docs_url('candidates.jinja')|url }}">
-          {% set remaining_candidates_count = candidates_count - candidates_promo|length %}
-          {{ remaining_candidates_count|nplurals("Další", "Další", "Dalších") }}
-          {{ remaining_candidates_count }}
-          {{ remaining_candidates_count|nplurals("kandidát", "kandidáti", "kandidátů") }}
-        </a>
-      </p>
-    </div>
-    <div class="juniors-column yellow">
-      <h2>Už práci našli</h2>
-      {% set listing_size = 4 %}
-      {% for story_page in stories_pages[:listing_size] %}
-        {{ juniors_story(story_page) }}
-      {% endfor %}
-      <p class="juniors-listing-link">
-        <a href="{{ pages|docs_url('stories.md')|url }}#pribehy-z-juniorguru">
-          {% set remaining_stories_count = stories_pages|length - listing_size %}
-          {% if remaining_stories_count < 10 %}
-            Další příběhy
-          {% else %}
-            Dalších {{ remaining_stories_count }} příběhů
-          {% endif %}
-        </a>
-      </p>
-    </div>
-  </div>
+  {{ juniors("Právě hledají práci", "Už práci našli") }}
 </section>
