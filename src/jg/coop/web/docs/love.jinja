@@ -29,6 +29,17 @@ thumbnail_button_icon: heart
   <p class="love-progress-thanks">Díky moc!</p>
 </div>
 
+<div class="standout text-center">
+  <span class="members centered mb-0">
+  {% for sponsor in sponsors_github|sample(5) %}
+    {{ img('static/' + sponsor.avatar_path, 'Profilovka sponzora', 50, 50, lazy=False) }}
+  {% endfor %}
+  {% for member in members|sample(10) %}
+    {{ img('static/' + member.avatar_path, 'Profilovka člena klubu', 50, 50, lazy=False) }}
+  {% endfor %}
+  </span>
+</div>
+
 <div class="love-donate">
   <div class="love-donate-qr">
     {{ donation_qr_svg }}
@@ -101,17 +112,6 @@ thumbnail_button_icon: heart
     </small>
   </p>
 </div>
-</div>
-
-<div class="standout text-center">
-  <span class="members centered mb-0">
-  {% for sponsor in sponsors_github|sample(5) %}
-    {{ img('static/' + sponsor.avatar_path, 'Profilovka sponzora', 50, 50, lazy=False) }}
-  {% endfor %}
-  {% for member in members|sample(10) %}
-    {{ img('static/' + member.avatar_path, 'Profilovka člena klubu', 50, 50, lazy=False) }}
-  {% endfor %}
-  </span>
 </div>
 
 <h2>Kolik stojí „zdarma“ a bez reklam</h2>
