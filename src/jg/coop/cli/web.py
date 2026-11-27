@@ -165,6 +165,8 @@ def serve(context, output_path: Path, open: bool):
 
     server = Server()
     server.setHeader("Access-Control-Allow-Origin", "*")
+    # Without it, browsers cache CSS heuristically and miss rebuilds
+    server.setHeader("Cache-Control", "no-store")
     server.watch("src/jg/coop/**/*.js", rebuild_static)
     server.watch("src/jg/coop/**/*.scss", rebuild_static)
     server.watch("src/jg/coop/images/", rebuild_static)
