@@ -104,7 +104,7 @@ thumbnail_button_icon: heart
 </div>
 
 <div class="standout text-center">
-  <span class="members centered muted mb-0">
+  <span class="members centered mb-0">
   {% for sponsor in sponsors_github|sample(5) %}
     {{ img('static/' + sponsor.avatar_path, 'Profilovka sponzora', 50, 50, lazy=False) }}
   {% endfor %}
