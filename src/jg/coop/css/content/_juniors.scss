@@ -15,7 +15,7 @@ $juniors-avatars-size: $juniors-arrow-icon-size + 1rem;
   gap: $spacer;
 }
 
-.juniors-column:first-child::after {
+.juniors .juniors-column:first-child::after {
   position: absolute;
   top: calc(100% + #{($juniors-gap - $juniors-arrow-icon-size) * .5});
   left: 50%;
@@ -33,7 +33,7 @@ $juniors-avatars-size: $juniors-arrow-icon-size + 1rem;
     gap: $juniors-gap;
   }
 
-  .juniors-column:first-child::after {
+  .juniors .juniors-column:first-child::after {
     top: 50%;
     left: calc(100% + #{($juniors-gap - $juniors-arrow-icon-size) * .5});
     content: "\F231";  // https://icons.getbootstrap.com/icons/caret-right-fill/

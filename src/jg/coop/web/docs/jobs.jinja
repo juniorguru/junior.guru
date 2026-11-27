@@ -4,7 +4,7 @@ description: Procházej nabídky práce, stáže a brigády zaměřené výhrad
 template: main_jobs.html
 ---
 
-{% from 'macros.html' import club_url, discord_dialog_utm, lead, note, jobs_filters_form, job_card, manual_job_card, jobs_form_box, jobs_club_box with context %}
+{% from 'macros.html' import discord_dialog_utm, job_card, jobs_club_box, jobs_filters_form, jobs_form_box, jobs_posting_note, lead, manual_job_card, note with context %}
 
 {% if jobs_listing %}
   {% set jobs = jobs_by_listing[jobs_listing.slug] %}
@@ -35,12 +35,7 @@ template: main_jobs.html
   Tento pracovní portál je na tvé straně!
 {% endcall %}
 
-{% call note() -%}
-  {{ 'plus-circle'|icon }} Chceš přidat inzerát?
-  Vytvoř si zdarma <a href="{{ club_url("jobs-recruiters") }}">účet v klubu</a>
-  a založ nové vlákno v kanálu <a href="{{ club_jobs_channel_url }}" {{ discord_dialog_utm("jobs-recruiters") }}>#práce-inzeráty</a>.
-  Do 24h se tady objeví. Zvýrazněný a nahoře!
-{%- endcall %}
+{{ jobs_posting_note() }}
 
 {{ jobs_filters_form(filters) }}
 

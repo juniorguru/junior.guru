@@ -26,3 +26,61 @@
 .heartbeat {
   animation: heartbeat 5s ease-in-out infinite;
 }
+
+.love-donate {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2 * $spacer;
+  align-items: center;
+  justify-content: center;
+  padding: 2 * $spacer;
+  margin-bottom: $spacer;
+  background-color: $jg-blue-light;
+  border-radius: $border-radius;
+}
+
+.love-donate-qr {
+  flex: 0 0 auto;
+  width: 200px;
+  padding: map.get($spacers, 2);
+  background-color: $jg-white;
+  border-radius: $border-radius;
+}
+
+.love-donate-qr svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.love-donate-heading {
+  @extend .fs-4;
+  margin-top: 0;
+}
+
+.love-donate-details {
+  flex: 1 1 15rem;
+  max-width: 25rem;
+}
+
+.love-donate-account {
+  margin-bottom: 0;
+}
+
+.love-donate-account dt {
+  @extend .text-muted;
+  font-weight: $font-weight-normal;
+}
+
+.love-donate-account dd {
+  margin-bottom: map.get($spacers, 2);
+  font-weight: $font-weight-bold;
+  user-select: all;
+}
+
+.love-juniors {
+  display: flex;
+  flex-direction: column;
+  gap: $spacer;
+  margin-bottom: $spacer;
+}

@@ -42,6 +42,14 @@ PODCAST_APPLE_URL = (
     "https://podcasts.apple.com/cz/podcast/junior-guru-podcast/id1603653549"
 )
 
+BANK_ACCOUNT = "2501717332/2010"
+
+BANK_IBAN = "CZ84 2010 0000 0025 0171 7332"
+
+BANK_BIC = "FIOBCZPPXXX"
+
+DONATIONS_VARIABLE_SYMBOL = "444222"
+
 
 def site_url(path: str = "") -> str:
     return f"{SITE_URL}{path.removeprefix('/')}"

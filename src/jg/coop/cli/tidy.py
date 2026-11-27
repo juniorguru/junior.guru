@@ -128,7 +128,7 @@ def format_jinja():
         unused_imports = imports - calls
         if unused_imports:
             logger.warning(f"Unused imports: {', '.join(unused_imports)}")
-            path.write_text(replace_jinja_imports(markup, calls))
+            path.write_text(replace_jinja_imports(markup, imports & calls))
 
 
 @main.command()

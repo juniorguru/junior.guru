@@ -31,7 +31,7 @@ Ačkoliv dělá obchody s firmami, zachovává si nezávislost a nenechává se 
 {% for tier, sponsors in sponsors_by_tier %}
 ## Tarif „{{ tier.name }}“
 
-Sponzoři, kteří zaplatili za tarif číslo {{ tier.priority + 1 }} (vyšší je lepší) z přehledu na [Pošli LOVE](../love.jinja).
+Sponzoři, kteří zaplatili za tarif číslo {{ tier.priority + 1 }} (vyšší je lepší).
 
 <div class="table-responsive"><table class="table align-middle">
   {% for sponsor in sponsors %}

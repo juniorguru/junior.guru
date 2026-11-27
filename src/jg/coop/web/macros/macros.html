@@ -841,6 +841,62 @@
 {% endmacro %}
 
 
+{% macro jobs_posting_note(utm_source="jobs-recruiters") %}
+{% call note() -%}
+  {{ 'plus-circle'|icon }} Chceš přidat inzerát?
+  Vytvoř si zdarma <a href="{{ club_url(utm_source) }}">účet v klubu</a>
+  a založ nové vlákno v kanálu <a href="{{ club_jobs_channel_url }}" {{ discord_dialog_utm(utm_source) }}>#práce-inzeráty</a>.
+  Do 24h se tady objeví. Zvýrazněný a nahoře!
+{%- endcall %}
+{% endmacro %}
+
+
+{% macro juniors_candidate(candidate) %}
+<div class="juniors-item">
+  {{ img('static/' + candidate.avatar_path, '', 100, 100, class='juniors-avatar') }}
+  <div class="juniors-content">
+    <h3 class="juniors-name">
+      <a class="juniors-name-link" href="{{ pages|docs_url('candidates.jinja')|url }}">
+        {{ candidate.name }}
+      </a>
+    </h3>
+    <p class="juniors-text small juniors-details">
+      <span class="juniors-details-item">
+        {{ "geo-alt"|icon }} {{ candidate.location_text|default("všudezdejší", true) }}
+      </span>
+      {% for badge in candidate.badges if badge.promo %}
+        <span class="juniors-details-item">
+          {{ badge.icon|icon }} {{ badge.label }}
+        </span>
+      {% endfor %}
+    </p>
+    <p class="juniors-text small juniors-tags">
+      {% for tag in candidate.tags %}
+        <span class="juniors-tag">{{- tag.name -}}</span>
+      {% endfor %}
+    </p>
+  </div>
+</div>
+{% endmacro %}
+
+
+{% macro juniors_story(story_page) %}
+<div class="juniors-item">
+  {{ img('static/' + story_page.meta.interviewee_avatar_path, '', 100, 100, class='juniors-avatar') }}
+  <div class="juniors-content">
+    <h3 class="juniors-name">
+      <a class="juniors-name-link" href="{{ pages|docs_url(story_page.src_uri)|url }}">
+        {{ story_page.meta.interviewee }}
+      </a>
+    </h3>
+    <p class="juniors-text">
+      „{{ story_page.title }}“
+    </p>
+  </div>
+</div>
+{% endmacro %}
+
+
 {% macro jobs_form_box() %}
 <li class="jobs-item jobs-box form" data-jobs-box-position="{{ jobs_form_position }}">
   {{ github_profile_form("jobs") }}

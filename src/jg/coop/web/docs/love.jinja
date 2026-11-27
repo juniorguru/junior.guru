@@ -1,19 +1,43 @@
 ---
 title: Podpoř junior.guru
-description: Líbí se ti tento web? Pošli LOVE! Sponzoruj junior.guru, jako jednotlivec, nebo jako firma.
+description: Líbí se ti tento web? Pošli LOVE! Podpoř junior.guru dobrovolným příspěvkem, jako jednotlivec, nebo jako firma.
 template: main_love.html
 thumbnail_button_icon: heart
 ---
 
-{% from 'macros.html' import lead, note, markdown, logo, img, blockquote_avatar with context %}
+{% from 'macros.html' import lead, note, markdown, img, juniors_candidate, juniors_story, jobs_posting_note with context %}
 
 <h1>Pošli LOVE</h1>
 {% call lead() %}
-  Líbí se ti tento web? Ukázal ti cestu k programování? K lepší práci? Pomohl vaší firmě najmout super kolegy? Chcete jako firma podpořit juniory v jejich snažení? Aby mohlo junior.guru dál existovat a pomáhat co nejvíce lidem, potřebuje peníze na provoz.
+  Pomohlo ti junior.guru? Ukázalo ti cestu k programování? K lepší práci? Všechno je tady zdarma a bez reklam, ale provoz zdarma není. Pokud chceš poděkovat, pošli příspěvek.
 {% endcall %}
 
 <div class="text-center standout">
 {{ img('static/heart.svg', 'srdíčko', 80, 80, lazy=False) }}
+</div>
+
+<div class="love-donate">
+  <div class="love-donate-qr">
+    {{ donation_qr_svg }}
+  </div>
+  <div class="love-donate-details">
+    <h2 class="love-donate-heading">Pošli příspěvek z banky</h2>
+    <p>
+      Naskenuj QR kód v aplikaci své banky.
+      Předvyplněno je {{ donation_amount_czk }} Kč, ale částku si můžeš změnit.
+      Nikde se nezobrazíš, příspěvek je anonymní.
+    </p>
+    <dl class="love-donate-account">
+      <dt>Číslo účtu</dt>
+      <dd>{{ brand.BANK_ACCOUNT }}</dd>
+      <dt>Variabilní symbol</dt>
+      <dd>{{ brand.DONATIONS_VARIABLE_SYMBOL }}</dd>
+      <dt>IBAN</dt>
+      <dd>{{ brand.BANK_IBAN }}</dd>
+      <dt>BIC</dt>
+      <dd>{{ brand.BANK_BIC }}</dd>
+    </dl>
+  </div>
 </div>
 
 <div class="tiers-cards">
@@ -21,15 +45,14 @@ thumbnail_button_icon: heart
   <h3 class="tiers-card-header">GitHub Sponsors</h3>
   <div class="card-body">
     <ul class="card-text">
-      <li>Podporuješ provoz junior.guru</li>
-      <li>Pokud zaškrtneš, že podporuješ veřejně, objeví se tvůj avatar na <a href="{{ pages|docs_url('index.jinja')|url }}">úvodní stránce</a></li>
-      <li>Platba kartou</li>
+      <li>Pravidelný příspěvek kartou</li>
+      <li>Pokud zaškrtneš, že podporuješ veřejně, objeví se tvůj avatar na <a href="{{ pages|docs_url('index.jinja')|url }}">úvodní stránce</a></li>
     </ul>
   </div>
   <p class="tier-card-footer">
     <a class="btn btn-dark" href="https://github.com/sponsors/honzajavorek/" target="_blank" rel="noopener">
       {{ 'github'|icon }}
-      od {{ github_sponsors_czk }} Kč/měs
+      od {{ github_sponsors_czk }} Kč/měs
     </a>
     {% set sponsors_count = sponsors_github|length %}
     {% if sponsors_count %}
@@ -44,18 +67,18 @@ thumbnail_button_icon: heart
 </div>
 
 <div class="tiers-card">
-  <h3 class="tiers-card-header">Členství v klubu</h3>
+  <h3 class="tiers-card-header">Členství v klubu</h3>
   <div class="card-body">
     <ul class="card-text">
-      <li>Podporuješ provoz junior.guru a navíc jsi v super komunitě</li>
-      <li>Normální členství v <a href="{{ pages|docs_url('club.md')|url }}">klubu</a> pro 1 člověka</li>
+      <li>Podporuješ provoz junior.guru a navíc jsi v super komunitě</li>
+      <li>Normální členství v <a href="{{ pages|docs_url('club.md')|url }}">klubu</a> pro 1 člověka</li>
       <li>2 týdny zdarma, potom platba kartou</li>
     </ul>
   </div>
   <p class="tier-card-footer">
     <a class="btn btn-primary" href="https://juniorguru.memberful.com/checkout?plan=143775" target="_blank" rel="noopener">
       {{ 'person-circle'|icon }}
-      299 Kč/měs
+      299 Kč/měs
     </a>
     <small>
       jako
@@ -78,84 +101,64 @@ thumbnail_button_icon: heart
   </span>
 </div>
 
-<div class="tiers-cards">
-{% for tier in sponsor_tiers %}
-  {% set sponsors_count = tier.list_sponsors|length %}
-  <div class="tiers-card{% if tier.is_sold_out %} soldout{% endif %}">
-    <h3 class="tiers-card-header" id="{{ tier.anchor }}">Tarif „{{ tier.name }}“</h3>
-    <div class="card-body">
-      {% if tier.plan_id == 111099 %}
-        {% set btn = "success" %}
-        {% set icon = "heart-fill" %}
-        <ul class="card-text">
-          <li>Logo na <a href="{{ pages|docs_url('index.jinja')|url }}">úvodní stránce</a></li>
-          <li>Skupinové členství v <a href="{{ pages|docs_url('club.md')|url }}">klubu</a>, 15 míst</li>
-          <li>Kartou nebo na fakturu, neplátce DPH</li>
-        </ul>
+{% if donations_coverage_ptc is not none %}
+{% call note(standout=True) -%}
+  {{ 'piggy-bank'|icon }}
+  Za posledních 12 měsíců pokryly dobrovolné příspěvky **{{ donations_coverage_ptc }} %** nákladů na provoz junior.guru.
+  Předplatné členů klubu pokrylo {{ memberships_coverage_ptc }} %.
+  Všechna čísla jsou v [transparentních financích](about/finances.md).
+{%- endcall %}
+{% endif %}
 
-      {% elif tier.plan_id == 111100 %}
-        {% set btn = "secondary" %}
-        {% set icon = "star-fill" %}
-        <ul class="card-text">
-          <li>Všechno co předchozí tarif</li>
-          <li>Zvýrazněný zápis v <a href="{{ pages|docs_url('courses.md')|url }}">katalogu kurzů</a> s logem a odkazem bez <em>nofollow</em> (zlepší vaše SEO)</li>
-          <li>Možnost přikupovat místa v klubu pro lektory či studenty, {{ tier.member_price }} Kč/místo/rok</li>
-          <li>Kartou nebo na fakturu, neplátce DPH</li>
-        </ul>
+<h2>Kolik stojí „zdarma“ a bez reklam</h2>
+{% call markdown() %}
+Kromě [klubu](club.md) je tady všechno zdarma. Nevyskakují tady reklamy, není tady paywall ani affiliate odkazy. Kurzy se tady doporučují podle poctivého průzkumu a svědomí, ne proto, že si to někdo zaplatil.
 
-      {% elif tier.plan_id == 111101 %}
-        {% set btn = "danger" %}
-        {% set icon = "shield-fill" %}
-        <ul class="card-text">
-          <li>Všechno co předchozí tarify</li>
-          <li>Logo i na všech stránkách <a href="{{ pages|docs_url('handbook/index.md')|url }}">příručky</a></li>
-          <li>Omezené množství, maximálně {{ tier.max_sponsors }} firmy</li>
-          <li>Kartou nebo na fakturu, neplátce DPH</li>
-        </ul>
+Za tím je ale spousta práce a provoz něco stojí. Příspěvky jsou způsob, jak to nechat zdarma pro všechny, a zároveň dát lidem možnost poděkovat, pokud jim junior.guru pomohlo.
+{% endcall %}
 
-      {% else %}
-        {% call note(standout=True) -%}
-          {{ 'exclamation-circle'|icon }} Tady něco má být, ale není to tu. Napiš prosím na <a href="mailto:{{ brand.CONTACT_EMAIL }}">{{ brand.CONTACT_EMAIL }}</a>
-        {%- endcall %}
-      {% endif %}
-    </div>
-    <p class="tier-card-footer">
-    {% if tier.is_sold_out %}
-      <button class="btn btn-{{ btn }}" disabled>
-        {{ icon|icon }}
-        {{ tier.price|thousands }} Kč/rok
-      </button>
-      <small>vyprodáno!</small>
-    {% else %}
-      <a class="btn btn-{{ btn }}" href="{{ tier.plan_url }}" target="_blank" rel="noopener">
-        {{ icon|icon }}
-        {{ tier.price|thousands }} Kč/rok
-      </a>
-      {% if sponsors_count %}
-      <small>
-        jako
-        {{ sponsors_count }}
-        {{ sponsors_count|nplurals("další", "další", "dalších") }}
-        {{ sponsors_count|nplurals("sponzor", "sponzoři", "sponzorů") }}
-      </small>
-      {% endif %}
-    {% endif %}
-    </p>
-  </div>
-{% endfor %}
+<h2>Komu tím prospěješ</h2>
+{% call markdown() %}
+Lidem, kteří se chtějí naučit programovat a najít první práci v IT. Aby jejich cesta nebyla past vedle pasti. Aby měli nezávislé informace o kurzech a podpůrnou komunitu, kde budou vítaní. Tady je pár z nich:
+{% endcall %}
+
+<div class="love-juniors juniors-column yellow">
+  {% for story_page in stories_pages[:3] %}
+    {{ juniors_story(story_page) }}
+  {% endfor %}
+  <p class="juniors-listing-link">
+    <a href="{{ pages|docs_url('stories.md')|url }}#pribehy-z-juniorguru">Další příběhy</a>
+  </p>
 </div>
 
-<div class="standout">
-  <ul class="logos compact muted">
-    {{ logo('Ataccama', 'logos/ataccama.svg') }}
-    {{ logo('Credo', 'logos/credo.svg') }}
-    {{ logo('Fakturoid', 'logos/fakturoid.svg') }}
-    {{ logo('Mews', 'logos/mews.svg') }}
-    {{ logo('Pure Storage', 'logos/purestorage.svg') }}
-    {{ logo('Red Hat', 'logos/redhat.svg') }}
-    {{ logo('STRV', 'logos/strv.svg') }}
-  </ul>
-</div>
+{% call markdown() %}
+Projekt tvoří **Honza Javorek**, jeden člověk na volné noze. Všechno má otevřené: [čísla](about/index.md), [zdrojový kód](https://github.com/juniorguru/) i [poznámky na blogu](https://honzajavorek.cz/blog/).
+{% endcall %}
+
+<h2>Pro firmy</h2>
+{% call markdown() %}
+Firmy můžou junior.guru podpořit také. Ceník tady nenajdete, stačí napsat a domluvíme se.
+{% endcall %}
+
+{% call note(standout=True) -%}
+  {{ 'heart-fill'|icon }}
+  **Najali jste juniora přes junior.guru a jste spokojení? Podpořte projekt.**
+  Přesně takhle to udělala firma Logical.
+{%- endcall %}
+
+{% call markdown() %}
+Proč podpořit junior.guru:
+
+- **Je to zdroj ověřených a šikovných juniorů** s různým zázemím, kteří jsou připravení nastoupit.
+- **Podporujete začátečníky**, ze kterých jednou budou senioři. Je to [DEI](https://en.wikipedia.org/wiki/Diversity,_equity,_and_inclusion) i [CSR](https://en.wikipedia.org/wiki/Corporate_social_responsibility) v praxi.
+- **Komunita si toho všimne.** Chodí sem začínající programátoři a testeři, ale i senioři, kteří junior.guru doporučují dál.
+
+Co za to můžete dostat:
+
+- místa v [klubu](club.md) pro lidi z vaší firmy,
+- logo na webu,
+- pokud učíte programování, zvýrazněný zápis v [katalogu kurzů](courses.md).
+{% endcall %}
 
 <div class="c2a highlighted">
   <p>
@@ -164,113 +167,32 @@ thumbnail_button_icon: heart
     </a>
   </p>
   <p class="c2a-text small">
+    <a href="{{ pages|docs_url('about/sponsors-partners.md')|url }}">Kdo už projekt podpořil</a>
+    ·
     <a href="{{ pages|docs_url('tos.md')|url }}">Obchodní podmínky</a>
   </p>
 </div>
 
-<h2>Kolik stojí „zdarma“ a bez reklam</h2>
+<h3>Hledáte juniora?</h3>
 {% call markdown() %}
-Kromě [klubu](club.md) je tady všechno zdarma, i celá [příručka](handbook/index.md), za kterou jsou stovky hodin práce.
-
-**Výhodou** je, že si můžeš všechno hezky přečíst. Můžeš to poslat kamarádce. Může si to projít každý horník z Ostravy. Není to uzavřené v nějaké placené knize. Máš to pěkně na mobilu. Nevyskakují na tebe reklamy. Vše se tady doporučuje podle poctivého průzkumu a svědomí. Ne proto, že si někdo to doporučení zaplatil.
-
-**Nevýhodou** je, že si tím junior.guru nevydělá na provoz. Bez příjmů si bude muset Honza Javorek, autor projektu, najít jiný způsob, jak uživit rodinu. Na aktualizace nebo rozšiřování obsahu nebude mít čas. Web postupně zastará a přestane být užitečný.
-
-Sponzorství je způsob, jak nechat obsah junior.guru zdarma a zároveň dát lidem možnost poděkovat, pokud jim projekt pomohl. Nebo jak dát firmám možnost to tady nějak podpořit.
-{% endcall %}
-{{ blockquote_avatar(
-  'Pomáhat začátečníkům mě baví. Myslím si, že tak mohu nejefektivněji využít všechno, co umím. A že tak mohu nejlépe přispět k tomu, aby byl svět kolem mě lepší. Díky každému, kdo mi umožní v tom pokračovat!',
-  'honza-javorek.jpg',
-  'Honza Javorek',
-  'Honza Javorek, provozovatel junior.guru a autor příručky',
-) }}
-
-<h2>Komu tím prospěješ</h2>
-{% call markdown() %}
-Cílem junior.guru je, **aby co nejvíc lidí v Česku a na Slovensku mělo příležitost naučit se programovat**.
-Aby každý Luďan z Mostu, každá puberťačka, každý vědec nebo každá máma na rodičovské měli po ruce návod, jak s tím začít.
-
-**Aby jejich cesta k první práci v IT nebyla past vedle pasti.**
-Aby k tomu měli kultivovanou podpůrnou komunitu, kde budou vítaní a mezi svými.
-**Aby měli nezávislé informace o poskytovatelích kurzů** a aby se mohli snadno propojit s firmami, kam by mohli nastoupit.
-
-Tento web má [transparentní všechna čísla](about/index.md), [otevřený zdrojový kód](https://github.com/juniorguru/) a obsah příručky je pod [otevřenou licencí](https://creativecommons.org/licenses/by-sa/4.0/deed.cs). Nic tady nevyskakuje, není tady žádný paywall, reklamy, affiliate odkazy, cookies.
-
-Projekt tvoří **Honza Javorek**. Jeden člověk, podnikatel na volné noze, bez ambice rozjíždět firmu. Své úspěchy a selhání otevřeně popisuje v každotýdenních poznámkách na [osobním blogu](https://honzajavorek.cz/blog/). Cílem je vydělat pouze na provoz junior.guru a jedné rodiny.
+Tihle zrovna hledají práci. Vybírat z <a href="{{ pages|docs_url('candidates.jinja')|url }}">kandidátů</a> můžete zdarma a oslovujete je napřímo.
 {% endcall %}
 
-{{ blockquote_avatar(
-  'Ty jo! Skoro se mi chce vrátit zpátky do minulýho tisíciletí a znovu si začít hledat svou první práci v IT… Díky za to, dobrá práce!',
-  'michal-spacek.jpg',
-  'Michal Špaček',
-  'Michal Špaček, odborník na bezpečnost webových aplikací',
-) }}
+<div class="love-juniors juniors-column">
+  {% for candidate in candidates_promo[:2] %}
+    {{ juniors_candidate(candidate) }}
+  {% endfor %}
+  <p class="juniors-listing-link">
+    <a href="{{ pages|docs_url('candidates.jinja')|url }}">
+      {% set remaining_candidates_count = candidates_count - 2 %}
+      {{ remaining_candidates_count|nplurals("Další", "Další", "Dalších") }}
+      {{ remaining_candidates_count }}
+      {{ remaining_candidates_count|nplurals("kandidát", "kandidáti", "kandidátů") }}
+    </a>
+  </p>
+</div>
 
-<h2>Proč tady mít logo</h2>
 {% call markdown() %}
-Protože je to [DEI](https://en.wikipedia.org/wiki/Diversity,_equity,_and_inclusion) a [CSR](https://en.wikipedia.org/wiki/Corporate_social_responsibility). A protože tenhle projekt je _love brand_. Spojovat se jakkoliv s junior.guru může tvé značce jen pomoci.
-
-Mnozí **top senioři** na trhu jsou v místní komunitě, doporučují junior.guru každému na potkání a mnohdy projekt i sami finančně podporují. Chodí sem **hromady začínajících programátorů a testerů**, kteří se jednou těmi seniory stanou.
-
-Pokud chceš, aby pro tebe pracovali, aby si kupovali tvůj produkt, nebo aby věděli, že podporuješ super věci, které mají rádi, tak tady chceš mít logo.
+Inzerovat na <a href="{{ pages|docs_url('jobs.jinja')|url }}">pracovním portálu</a> je zdarma.
 {% endcall %}
-
-<figure class="figure"><div class="chart-figure"><canvas
-    class="chart" width="400" height="230"
-    data-chart-type="bar"
-    data-chart="{{ {
-        'labels': {
-            'home': 'úvodní stránka',
-            'courses': 'katalog kurzů',
-            'handbook': 'příručka',
-        }|mapping(charts.logo_impressions_breakdown.keys()),
-        'datasets': [
-            {
-                'label': 'průměrný počet zobrazení měsíčně',
-                'data': charts.logo_impressions_breakdown.values()|list,
-                'backgroundColor': '#1755d1',
-            },
-        ],
-    }|tojson|forceescape }}"
-    data-chart-options="{{ {
-        'interaction': {'mode': 'index'},
-        'scales': {'y': {'beginAtZero': true}},
-    }|tojson|forceescape }}"></canvas></div></figure>
-
-{{ blockquote_avatar(
-  'Příručka je naprosto boží, přečetla jsem ji jedním dechem a nasbírala inspiraci, co ještě udělat. Tolik tipů na jednom místě člověk nikde jinde nenajde.',
-  'lenka-erbenova.jpg',
-  'Lenka Erbenová',
-  'Lenka Erbenová, frontendistka, absolventka PyLadies a Czechitas',
-) }}
-{{ blockquote_avatar(
-  'Honza Javorek má super reálnou příručku o hledání první práce v IT. Budeme ji určitě zmiňovat na kariérních workshopech.',
-  'monika-ptacnikova.jpg',
-  'Monika Ptáčníková',
-  'Monika Ptáčníková, spoluzakladatelka Czechitas',
-) }}
-
-<h2>Proč být v klubu i pokud nejsi junior</h2>
-{% call markdown() %}
-Můžeš do klubu házet promo, pozvánky, pracovní inzeráty, hledat lektory na kurzy… Všichni jsme v [klubu](club.md) sice proto, abychom pomáhali juniorům, ale každý z toho máme i nějaké **benefity pro sebe**:
-
-- [Senioři](faq.md#seniori)
-- [Profesionálové na volné noze](faq.md#freelanceri)
-- [Recruiteři](faq.md#recruiteri)
-- [Komunitní manažeři](faq.md#komunitaci)
-
-Nejužitečnější jsou takové komunity, ve kterých **můžeš potkat lidi s různými zkušenostmi a rolemi**. Přesně takovou se snažíme vybudovat.
-{% endcall %}
-
-<h2>Proč do klubu posílat studenty kurzu</h2>
-{% call markdown() %}
-Discord si umí založit každý, ale budování **opravdu funkční komunity** je náročné a vyžaduje hodně času. Můžeš svým studentům udělat nějaký kariérní seminář, ale pokud má být podpora studentů při hledání práce efektivní, musí být **soustavná a trvat měsíce**.
-
-Soustřeď se na svůj <em>core business</em>, tedy výuku programování, a tyhle věci neřeš. V [klubu](club.md) tvým studentům zajistíme živou komunitu, dostatečně dobré kariérové poradenství, podporu během hledání práce, nebo zpětnou vazbu na CV.
-{% endcall %}
-{{ blockquote_avatar(
-  'Mám již vypsán nový termín kurzu a mám tam přístup do junior.guru klubu jako benefit. Lidé si toho všimli a chválí si to.',
-  'lucie-lenertova.jpg',
-  'Lucie Lénertová',
-  'Lucie Lénertová, provozovatelka kurzu Dokážeš programovat',
-) }}
+{{ jobs_posting_note("love") }}

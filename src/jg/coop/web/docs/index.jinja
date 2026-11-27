@@ -5,7 +5,7 @@ description: Průvodce a komunita pro začátečníky v programování, testová
 thumbnail_subheading: junior.guru
 ---
 
-{% from 'macros.html' import blockquote_avatar, img, logo, github_profile_form with context %}
+{% from 'macros.html' import blockquote_avatar, github_profile_form, juniors_candidate, juniors_story, logo with context %}
 
 <script type="application/ld+json">{{ graph_json_ld(website_json_ld(), organization_json_ld())|json_ld }}</script>
 
@@ -299,31 +299,7 @@ thumbnail_subheading: junior.guru
     <div class="juniors-column">
       <h2>Právě hledají práci</h2>
       {% for candidate in candidates_promo %}
-        <div class="juniors-item">
-          {{ img('static/' + candidate.avatar_path, '', 100, 100, class='juniors-avatar') }}
-          <div class="juniors-content">
-            <h3 class="juniors-name">
-              <a class="juniors-name-link" href="{{ pages|docs_url('candidates.jinja')|url }}">
-                {{ candidate.name }}
-              </a>
-            </h3>
-            <p class="juniors-text small juniors-details">
-              <span class="juniors-details-item">
-                {{ "geo-alt"|icon }} {{ candidate.location_text|default("všudezdejší", true) }}
-              </span>
-              {% for badge in candidate.badges if badge.promo %}
-                <span class="juniors-details-item">
-                  {{ badge.icon|icon }} {{ badge.label }}
-                </span>
-              {% endfor %}
-            </p>
-            <p class="juniors-text small juniors-tags">
-              {% for tag in candidate.tags %}
-                <span class="juniors-tag">{{- tag.name -}}</span>
-              {% endfor %}
-            </p>
-          </div>
-        </div>
+        {{ juniors_candidate(candidate) }}
       {% endfor %}
       <p class="juniors-listing-link">
         <a href="{{ pages|docs_url('candidates.jinja')|url }}">
@@ -338,19 +314,7 @@ thumbnail_subheading: junior.guru
       <h2>Už práci našli</h2>
       {% set listing_size = 4 %}
       {% for story_page in stories_pages[:listing_size] %}
-        <div class="juniors-item">
-          {{ img('static/' + story_page.meta.interviewee_avatar_path, '', 100, 100, class='juniors-avatar') }}
-          <div class="juniors-content">
-            <h3 class="juniors-name">
-              <a class="juniors-name-link" href="{{ pages|docs_url(story_page.src_uri)|url }}">
-                {{ story_page.meta.interviewee }}
-              </a>
-            </h3>
-            <p class="juniors-text">
-              „{{ story_page.title }}“
-            </p>
-          </div>
-        </div>
+        {{ juniors_story(story_page) }}
       {% endfor %}
       <p class="juniors-listing-link">
         <a href="{{ pages|docs_url('stories.md')|url }}#pribehy-z-juniorguru">
