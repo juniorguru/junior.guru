@@ -5,7 +5,7 @@ template: main_love.html
 thumbnail_button_icon: heart
 ---
 
-{% from 'macros.html' import lead, note, markdown, img, juniors_candidate, juniors_story, jobs_posting_note with context %}
+{% from 'macros.html' import lead, note, markdown, img, logos_list, juniors_candidate, juniors_story, jobs_posting_note with context %}
 
 <h1>Pošli LOVE</h1>
 {% call lead() %}
@@ -114,10 +114,15 @@ thumbnail_button_icon: heart
     </small>
   </p>
 </div>
+</div>
 
+{{ logos_list(sponsors, class="standout") }}
+
+<div class="tiers-cards">
 <div class="tiers-card wide">
   <h3 class="tiers-card-header">Firemní sponzorství</h3>
   <div class="card-body">
+    <p class="card-text"><strong>Najali jste juniora přes junior.guru a jste spokojení? Podpořte junior.guru!</strong></p>
     <ul class="card-text">
       <li>Logo na webu, místa v <a href="{{ pages|docs_url('club.md')|url }}">klubu</a> pro vaše lidi, zvýraznění v <a href="{{ pages|docs_url('courses.md')|url }}">katalogu kurzů</a>, nebo co vás napadne</li>
       <li>Na fakturu, neplátce DPH</li>
