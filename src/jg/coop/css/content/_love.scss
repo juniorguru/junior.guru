@@ -97,11 +97,10 @@
 
 .love-progress-bar {
   @extend .progress-bar;
+  @extend .breathe;
   font-weight: 600;
   color: $jg-white;
   background-color: $jg-pink;
-  transform-origin: left center;
-  animation: progress-breathe 5s ease-in-out infinite;
 }
 
 .love-progress-text {

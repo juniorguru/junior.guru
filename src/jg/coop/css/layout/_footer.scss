@@ -1,29 +1,6 @@
 @use "sass:map";
 @use "sass:color";
 
-@keyframes progress-breathe {
-  0%,
-  68% {
-    transform: scaleX(1);
-  }
-
-  88% {
-    transform: scaleX(1.06);
-  }
-
-  91% {
-    transform: scaleX(1.08);
-  }
-
-  93% {
-    transform: scaleX(.98);
-  }
-
-  100% {
-    transform: scaleX(1);
-  }
-}
-
 $footer-spacer-sm: map.get($spacers, 2);
 $footer-spacer: $spacer;
 $footer-spacer-md: $spacer * 2;
@@ -162,11 +139,10 @@ $footer-spacer-md: $spacer * 2;
 
 .footer-progress-bar {
   @extend .progress-bar;
+  @extend .breathe;
   font-weight: 600;
   color: $jg-white;
   background-color: $jg-pink;
-  transform-origin: left center;
-  animation: progress-breathe 5s ease-in-out infinite;
 }
 
 .footer-goal {
