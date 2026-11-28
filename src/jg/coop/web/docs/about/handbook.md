@@ -60,7 +60,7 @@ Obsah kapitol edituje, tzn. hlídá kvalitu a texty upravuje tak, aby zapadly do
 
 ## Počty zobrazení
 
-Pokud si [sponzor](../love.jinja) zaplatí nejvyšší tarif, má logo na příručce.
+[Sponzoři](../love.jinja) mají logo na příručce.
 Hodí se vědět, kolikrát se takové logo lidem zobrazí.
 
 <figure class="figure"><div class="chart-figure"><canvas
