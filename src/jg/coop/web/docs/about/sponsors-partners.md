@@ -28,10 +28,9 @@ Ačkoliv dělá obchody s firmami, zachovává si nezávislost a nenechává se 
   <a href="{{ pages|docs_url("love.jinja")|url }}" class="love-btn btn-lg pulse">{{ 'heart-fill'|icon }} Pošli LOVE</a>
 </p>
 
-{% for tier, sponsors in sponsors_by_tier %}
-## Tarif „{{ tier.name }}“
+## Firemní sponzoři
 
-Sponzoři, kteří zaplatili za tarif číslo {{ tier.priority + 1 }} (vyšší je lepší).
+Firmy, které finančně podporují provoz junior.guru. Všichni sponzoři jsou si rovni, bez ohledu na to, kolik platí.
 
 <div class="table-responsive"><table class="table align-middle">
   {% for sponsor in sponsors %}
@@ -62,7 +61,6 @@ Sponzoři, kteří zaplatili za tarif číslo {{ tier.priority + 1 }} (vyšší 
     </tr>
   {% endfor %}
 </table></div>
-{% endfor %}
 
 ## GitHub Sponsors
 

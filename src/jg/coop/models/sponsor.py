@@ -1,62 +1,15 @@
 from collections.abc import Iterable
 from datetime import date
-from itertools import groupby
 from typing import Literal, Self
 
 import czech_sort
-from peewee import (
-    BooleanField,
-    CharField,
-    DateField,
-    ForeignKeyField,
-    IntegerField,
-    TextField,
-    fn,
-)
+from peewee import BooleanField, CharField, DateField, IntegerField, TextField, fn
 
-from jg.coop.lib.brand import site_url
 from jg.coop.models.base import BaseModel, JSONField
 from jg.coop.models.club import ClubUser
 
 
 HANDBOOK_MAX_SPONSORS = 4
-
-
-class SponsorTier(BaseModel):
-    name = CharField()
-    priority = IntegerField()
-    price = IntegerField(null=True)
-    member_price = IntegerField(null=True)
-    plan_id = IntegerField()
-    max_sponsors = IntegerField(null=True)
-    courses_highlight = BooleanField(default=False)
-
-    @property
-    def url(self) -> str:
-        return site_url(f"love/#{self.slug}")
-
-    @property
-    def plan_url(self) -> str:
-        return f"https://juniorguru.memberful.com/checkout?plan={self.plans[0]}"
-
-    @property
-    def slug(self) -> str:
-        return f"tier-{self.priority}"
-
-    @property
-    def list_sponsors(self) -> Iterable["Sponsor"]:
-        return self._list_sponsors.order_by(Sponsor.name)
-
-    @property
-    def is_sold_out(self) -> bool:
-        return (
-            self.max_sponsors is not None
-            and len(self.list_sponsors) >= self.max_sponsors
-        )
-
-    @classmethod
-    def pricing_listing(cls) -> Iterable[Self]:
-        return cls.select().where(cls.price.is_null(False)).order_by(cls.priority)
 
 
 class Sponsor(BaseModel):
@@ -72,7 +25,6 @@ class Sponsor(BaseModel):
     account_ids = JSONField(default=list)
 
     # sponsor
-    tier = ForeignKeyField(SponsorTier, backref="_list_sponsors")
     start_on = DateField(null=True)
     renews_on = DateField()
     note = TextField(null=True)
@@ -105,11 +57,7 @@ class Sponsor(BaseModel):
 
     @classmethod
     def listing(cls) -> Iterable[Self]:
-        return (
-            cls.select()
-            .join(SponsorTier)
-            .order_by(SponsorTier.priority.desc(), fn.czech_sort(cls.name))
-        )
+        return cls.select().order_by(fn.czech_sort(cls.name))
 
     @classmethod
     def club_listing(cls) -> Iterable[Self]:
@@ -117,17 +65,9 @@ class Sponsor(BaseModel):
             cls.listing(),
             key=lambda sponsor: (
                 -1 * sponsor.members_count,
-                -1 * sponsor.tier.priority,
                 czech_sort.key(sponsor.name),
             ),
         )
-
-    @classmethod
-    def tier_grouping(cls) -> list[tuple[SponsorTier, list[Self]]]:
-        return [
-            (tier, list(sponsors))
-            for tier, sponsors in groupby(cls.listing(), lambda sponsor: sponsor.tier)
-        ]
 
     @classmethod
     def handbook_listing(cls) -> list[Self]:

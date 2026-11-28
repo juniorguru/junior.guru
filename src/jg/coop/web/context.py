@@ -108,9 +108,6 @@ def on_docs_context(context):
     context["candidates_promo"] = list(Candidate.promo_listing())
     context["candidates_count"] = Candidate.count()
 
-    # club.md, about/*.md
-    context["sponsors_by_tier"] = Sponsor.tier_grouping()
-
     # club.md, handbook/cv.md, handbook/mental-health.md
     context["events"] = Event.listing()
     context["events_recordings_count"] = len(Event.archive_listing(has_recording=True))
