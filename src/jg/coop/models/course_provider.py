@@ -16,7 +16,7 @@ from jg.coop.lib.memberful import (
 )
 from jg.coop.models.base import BaseModel
 from jg.coop.models.partner import Partner
-from jg.coop.models.sponsor import Sponsor, SponsorTier
+from jg.coop.models.sponsor import Sponsor
 from jg.coop.models.topic import TopicMention
 
 
@@ -111,7 +111,7 @@ class CourseProvider(BaseModel):
         if self.is_gone:
             return CourseProviderGroup.GRAVEYARD
         if org := self.organization:
-            if isinstance(org, Sponsor) and org.tier.courses_highlight:
+            if isinstance(org, Sponsor):
                 return CourseProviderGroup.HIGHLIGHTED
             if isinstance(org, Partner):
                 return CourseProviderGroup.PARTNERS
@@ -211,7 +211,7 @@ class CourseProvider(BaseModel):
         )
 
     @classmethod
-    def grouping(cls) -> list[tuple[SponsorTier | None, list[Self]]]:
+    def grouping(cls) -> list[tuple[CourseProviderGroup, list[Self]]]:
         groups = list(CourseProviderGroup)
         course_providers = sorted(
             cls.select(),

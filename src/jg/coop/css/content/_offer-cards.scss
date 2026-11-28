@@ -1,13 +1,13 @@
 @use "sass:map";
 @use "sass:color";
 
-.tiers-cards {
+.offer-cards {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: -1 * $spacer;
 }
 
-.tiers-card {
+.offer-card {
   @extend .card;
   margin: 0 0 map.get($spacers, 4);
   overflow: hidden;
@@ -15,7 +15,7 @@
   border: 1px solid $jg-blue-light;
 }
 
-.tiers-cards .tiers-card {
+.offer-cards .offer-card {
   flex-grow: 0;
   flex-shrink: 0;
   width: 100%;
@@ -30,13 +30,13 @@
   }
 }
 
-.tiers-card:nth-child(2n) {
+.offer-card:nth-child(2n) {
   @include media-breakpoint-up(sm) {
     margin-right: 0;
   }
 }
 
-.tiers-cards .tiers-card.wide {
+.offer-cards .offer-card.wide {
   @include media-breakpoint-up(sm) {
     width: 100%;
     min-width: 100%;
@@ -45,18 +45,18 @@
   }
 }
 
-.tiers-card-header {
+.offer-card-header {
   @extend .card-header;
   @extend .fs-5;
   background: $jg-blue-light;
   border-color: color.adjust($jg-blue-light, $lightness: -2%);
 }
 
-.tiers-card.soldout {
+.offer-card.soldout {
   opacity: .5;
 }
 
-.tier-card-footer {
+.offer-card-footer {
   @extend .card-footer;
   display: flex;
   flex-wrap: wrap;
@@ -69,13 +69,13 @@
   border-color: color.adjust($jg-blue-light, $lightness: -2%);
 }
 
-.tier-card-price {
+.offer-card-price {
   @extend .fs-5;
   width: 100%;
   margin-bottom: map.get($spacers, 2);
 }
 
-.tier-card-footer small {
+.offer-card-footer small {
   width: 100%;
   margin-top: map.get($spacers, 2);
 }

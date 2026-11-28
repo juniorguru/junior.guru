@@ -64,17 +64,17 @@ thumbnail_button_icon: heart
   </div>
 </div>
 
-<div class="tiers-cards">
-<div class="tiers-card">
-  <h3 class="tiers-card-header">GitHub Sponsors</h3>
+<div class="offer-cards">
+<div class="offer-card">
+  <h3 class="offer-card-header">GitHub Sponsors</h3>
   <div class="card-body">
     <ul class="card-text">
       <li>Pravidelný příspěvek kartou</li>
       <li>Pokud zaškrtneš, že podporuješ veřejně, objeví se tvůj avatar na <a href="{{ pages|docs_url('index.jinja')|url }}">úvodní stránce</a></li>
     </ul>
   </div>
-  <p class="tier-card-footer">
-    <strong class="tier-card-price">od {{ github_sponsors_czk }} Kč/měs</strong>
+  <p class="offer-card-footer">
+    <strong class="offer-card-price">od {{ github_sponsors_czk }} Kč/měs</strong>
     <a class="btn btn-dark" href="https://github.com/sponsors/honzajavorek/" target="_blank" rel="noopener">
       {{ 'github'|icon }}
       Podpoř na GitHubu
@@ -91,8 +91,8 @@ thumbnail_button_icon: heart
   </p>
 </div>
 
-<div class="tiers-card">
-  <h3 class="tiers-card-header">Členství v klubu</h3>
+<div class="offer-card">
+  <h3 class="offer-card-header">Členství v klubu</h3>
   <div class="card-body">
     <ul class="card-text">
       <li>Podporuješ provoz junior.guru a navíc jsi v super komunitě</li>
@@ -100,8 +100,8 @@ thumbnail_button_icon: heart
       <li>2 týdny zdarma, potom platba kartou</li>
     </ul>
   </div>
-  <p class="tier-card-footer">
-    <strong class="tier-card-price">299 Kč/měs</strong>
+  <p class="offer-card-footer">
+    <strong class="offer-card-price">299 Kč/měs</strong>
     <a class="btn btn-primary" href="https://juniorguru.memberful.com/checkout?plan=143775" target="_blank" rel="noopener">
       {{ 'person-circle'|icon }}
       Zkus klub
@@ -116,11 +116,11 @@ thumbnail_button_icon: heart
 </div>
 </div>
 
-{{ logos_list(sponsors, class="standout logos-tier-0") }}
+{{ logos_list(sponsors, class="standout logos-large") }}
 
-<div class="tiers-cards">
-<div class="tiers-card wide">
-  <h3 class="tiers-card-header">Firemní sponzorství</h3>
+<div class="offer-cards">
+<div class="offer-card wide">
+  <h3 class="offer-card-header">Firemní sponzorství</h3>
   <div class="card-body">
     <p class="card-text">Najali jste juniora přes junior.guru a jste spokojení? Podpořte junior.guru!</p>
     <ul class="card-text">
@@ -129,7 +129,7 @@ thumbnail_button_icon: heart
       <li>Na fakturu, neplátce DPH</li>
     </ul>
   </div>
-  <p class="tier-card-footer">
+  <p class="offer-card-footer">
     <a class="btn btn-success" href="mailto:{{ brand.CONTACT_EMAIL }}">
       {{ 'envelope-fill'|icon }}
       Napiš na {{ brand.CONTACT_EMAIL }}

@@ -1,4 +1,4 @@
-@mixin logos-tier($size-base) {
+@mixin logos-size($size-base) {
   $sm-width: $size-base;
   $sm-height: $size-base * .4;
   $width: $size-base * 1.5;
@@ -34,7 +34,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  @include logos-tier(3.5rem);
+  @include logos-size(3.5rem);
 }
 
 .logos-item {
@@ -49,19 +49,11 @@
 }
 
 /*
-  TIERS
+  SIZES
 */
 
-.logos-tier-0 {
-  @include logos-tier(4.5rem);
-}
-
-.logos-tier-1 {
-  @include logos-tier(6.5rem);
-}
-
-.logos-tier-2 {
-  @include logos-tier(8rem);
+.logos-large {
+  @include logos-size(4.5rem);
 }
 
 /*
@@ -117,5 +109,5 @@
 .logos.homepage {
   @extend .container-lg;
   @extend .muted;
-  @include logos-tier(3.5rem);
+  @include logos-size(3.5rem);
 }

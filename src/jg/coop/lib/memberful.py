@@ -510,18 +510,10 @@ def parse_export_id(html_tree: html.HtmlElement) -> int:
     return int(refreshable_url.split("/")[-1])
 
 
-def from_cents(cents: int) -> int:
-    return int(cents / 100)
-
-
 def parse_tier_name(plan_name: str) -> str:
     if match := re.search(r"^Tarif „([^“]+)“$", plan_name):
         return match.group(1)
     raise ValueError(f"Invalid plan name: {plan_name!r}")
-
-
-def is_public_plan(plan: dict) -> bool:
-    return plan["forSale"]
 
 
 def is_sponsor_plan(plan: dict) -> bool:
