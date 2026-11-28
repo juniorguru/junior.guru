@@ -76,12 +76,12 @@ def check_plan(value: HttpUrl | None, info: ValidationInfo) -> HttpUrl:
         parse_plan_id(value)  # raises ValueError
     if value and info.data["subscription"]:
         raise ValueError(
-            "Sponsor cannot have both plan and subscription specified: "
+            "Partner cannot have both plan and subscription specified: "
             f"{value!r} vs {info.data['subscription']!r}"
         )
     if not value and not info.data["subscription"]:
         raise ValueError(
-            "Sponsor must have either plan or subscription specified: "
+            "Partner must have either plan or subscription specified: "
             f"{value!r} vs {info.data['subscription']!r}"
         )
     return value
@@ -94,7 +94,6 @@ class OrganizationConfig(YAMLConfig):
     cz_business_id: int | None = None
     sk_business_id: int | None = None
     subscription: Annotated[HttpUrl | None, AfterValidator(check_subscription)] = None
-    plan: Annotated[HttpUrl | None, AfterValidator(check_plan)] = None
 
 
 class SponsorConfig(OrganizationConfig):
@@ -107,6 +106,7 @@ class SponsorsConfig(YAMLConfig):
 
 
 class PartnerConfig(OrganizationConfig):
+    plan: Annotated[HttpUrl | None, AfterValidator(check_plan)] = None
     start_on: str
     is_free: bool = True
     note: str
@@ -190,9 +190,7 @@ def main(today: date, clear_posters: bool):
                 logo_path=logo_path,
                 poster_path=poster_path,
                 account_ids=account_ids,
-                **sponsor.model_dump(
-                    exclude=["plan", "subscription", "note", "periods"]
-                ),
+                **sponsor.model_dump(exclude=["subscription", "note", "periods"]),
             )
         else:
             logger.info(f"Past sponsor {sponsor.name} ({sponsor.slug})")
