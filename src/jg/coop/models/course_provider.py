@@ -100,12 +100,16 @@ class CourseProvider(BaseModel):
         )
 
     @property
+    def student_pass_path(self) -> str:
+        return f"club/{self.slug}"
+
+    @property
     def student_pass_page_url(self) -> str:
-        return f"club/{self.slug}.jinja"
+        return f"{self.student_pass_path}.jinja"
 
     @property
     def student_pass_absolute_url(self) -> str:
-        return site_url(f"{self.student_pass_page_url.removesuffix('.jinja')}/")
+        return site_url(f"{self.student_pass_path}/")
 
     @property
     def group(self) -> CourseProviderGroup:

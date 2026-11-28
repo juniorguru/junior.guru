@@ -289,3 +289,9 @@ def test_student_pass_absolute_url(test_db: SqliteDatabase):
     cp = create_course_provider(1, slug="czechitas", student_pass=True)
 
     assert cp.student_pass_absolute_url == "https://junior.guru/club/czechitas/"
+
+
+def test_student_pass_page_url(test_db: SqliteDatabase):
+    cp = create_course_provider(1, slug="czechitas", student_pass=True)
+
+    assert cp.student_pass_page_url == "club/czechitas.jinja"
