@@ -13,6 +13,7 @@ from jg.coop.lib.memberful import (
     MONTHLY_PLAN_ID,
     checkout_url,
     student_pass_coupon_code,
+    student_pass_utm_params,
 )
 from jg.coop.models.base import BaseModel
 from jg.coop.models.partner import Partner
@@ -231,11 +232,3 @@ class CourseProvider(BaseModel):
 
     def __str__(self) -> str:
         return self.name
-
-
-def student_pass_utm_params(slug: str) -> dict[str, str]:
-    return {
-        "utm_source": "student_pass",
-        "utm_medium": "web",
-        "utm_campaign": f"course-{slug}",
-    }

@@ -451,7 +451,7 @@ def parse_one_time_code_email(raw_email: bytes) -> tuple[datetime, str] | None:
 def memberful_url(account_id: int | str) -> str:
     if not account_id:
         raise ValueError(f"{account_id}")
-    return f"https://juniorguru.memberful.com/admin/members/{account_id}/"
+    return f"https://{MEMBERFUL_DOMAIN}/admin/members/{account_id}/"
 
 
 def checkout_url(
@@ -465,6 +465,14 @@ def checkout_url(
         params["coupon"] = coupon
     params |= utm_params or {}
     return f"https://{MEMBERFUL_DOMAIN}/checkout?{urlencode(params)}"
+
+
+def student_pass_utm_params(slug: str) -> dict[str, str]:
+    return {
+        "utm_source": "student_pass",
+        "utm_medium": "web",
+        "utm_campaign": f"course-{slug}",
+    }
 
 
 def student_pass_coupon_code(slug: str) -> str:

@@ -15,6 +15,7 @@ from jg.coop.lib.memberful import (
     read_trusted_browser,
     select_one_time_code,
     student_pass_coupon_code,
+    student_pass_utm_params,
     write_trusted_browser,
 )
 
@@ -286,3 +287,11 @@ def test_parse_created_coupons_raises_on_other_errors():
 
     with pytest.raises(ValueError):
         parse_created_coupons(payload)
+
+
+def test_student_pass_utm_params():
+    assert student_pass_utm_params("czechitas") == {
+        "utm_source": "student_pass",
+        "utm_medium": "web",
+        "utm_campaign": "course-czechitas",
+    }
