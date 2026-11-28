@@ -61,6 +61,7 @@ class SubscriptionType(StrEnum):
     SPONSOR = auto()
     PARTNER = auto()
     FINAID = auto()
+    STUDENT_PASS = auto()
     FREE = auto()
 
 

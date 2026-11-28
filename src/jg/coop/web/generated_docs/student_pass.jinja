@@ -1,0 +1,48 @@
+{% from 'macros.html' import github_profile_form, jobs_inline, lead with context %}
+
+<h1>Propustka do klubu pro studenty {{ course_provider.name }}</h1>
+
+{% call lead() %}
+  Studuješ kurz od {{ course_provider.name }}, nebo ho máš za sebou? Máme pro tebe propustku do klubu junior.guru. K obvyklým dvěma týdnům na vyzkoušení dostaneš ještě **měsíc zdarma**, celkem tedy šest týdnů bez placení. Kartu nezadáváš.
+{% endcall %}
+
+<ul class="student-pass-benefits">
+  <li>{{ 'check-circle-fill'|icon }} Seniorní programátoři ti poradí s projekty, CV a hledáním práce</li>
+  <li>{{ 'check-circle-fill'|icon }} Potkáš juniory, kteří řeší to samé co ty</li>
+  <li>{{ 'check-circle-fill'|icon }} Pravidelné akce a archiv záznamů z nich</li>
+  <li>{{ 'check-circle-fill'|icon }} Pracovní nabídky pro začátečníky</li>
+</ul>
+
+<div class="student-pass standout">
+  <form id="student-pass-form" class="student-pass-form" data-slug="{{ course_provider.slug }}">
+    <label for="student-pass-input" class="student-pass-label">Jaký kurz od {{ course_provider.name }} studuješ nebo máš za sebou?</label>
+    <div class="student-pass-row">
+      <input id="student-pass-input" class="student-pass-input" required placeholder="Název kurzu nebo odkaz na něj">
+      <input type="submit" value="Ověřit" class="student-pass-button">
+    </div>
+  </form>
+  <p id="student-pass-verifying" class="student-pass-verifying" role="status" hidden>
+    <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+    Ověřuji…
+  </p>
+  <div id="student-pass-ticket" class="student-pass-ticket" tabindex="-1" hidden>
+    <h2 class="student-pass-ticket-heading">{{ 'ticket-perforated'|icon }} Tvoje propustka je připravená</h2>
+    <p>Dva týdny na vyzkoušení a potom měsíc zdarma. Kupón {{ course_provider.student_pass_coupon }} je v odkazu už vyplněný.</p>
+    <a class="student-pass-ticket-button" href="{{ course_provider.student_pass_checkout_url }}">Aktivovat propustku</a>
+    <p class="student-pass-ticket-note"><small>Pokud ti klub nesedne, prostě akorát nedoplníš platební údaje a systém tě po skončení propustky automaticky odebere.</small></p>
+  </div>
+</div>
+
+<h2>Můžeš si už hledat práci?</h2>
+
+{{ github_profile_form("student_pass") }}
+
+{{ jobs_inline(jobs, 4, jobs_url=pages|docs_url('jobs.jinja')|url) }}
+
+<p>Všechny nabídky najdeš na <a href="{{ pages|docs_url('jobs.jinja')|url }}">pracovním portálu</a>.</p>
+
+<div class="student-pass-organizers note">
+  <h2>Pro organizátory kurzu</h2>
+  <p>Chcete svým studentům dát propustku do klubu? Stačí jim poslat tento odkaz, třeba s následujícím textem:</p>
+  <textarea class="student-pass-organizers-text" readonly rows="4" aria-label="Text pro studenty">Jako studenti {{ course_provider.name }} máte propustku do klubu junior.guru, komunity pro začátečníky v programování. Kromě dvou týdnů na vyzkoušení dostanete ještě měsíc zdarma: {{ course_provider.student_pass_absolute_url }}</textarea>
+</div>

@@ -25,15 +25,6 @@ class SubscriptionInterval(StrEnum):
 
 
 @unique
-class SubscriptionType(StrEnum):
-    FREE = "free"
-    FINAID = "finaid"
-    INDIVIDUAL = "individual"
-    TRIAL = "trial"
-    SPONSOR = "sponsor"
-
-
-@unique
 class SubscriptionCancellationReason(StrEnum):
     OTHER = "other"
     NECESSITY = "necessity"

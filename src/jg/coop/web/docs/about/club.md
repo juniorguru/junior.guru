@@ -87,7 +87,7 @@ Růst počtu členů v procentech. Každý měsíc se porovnává se stejným m�
 
 ## Typy členství
 
-Ke členství v klubu lze přijít různými způsoby. Každý nově příchozí má v klubu dva týdny zdarma na vyzkoušení. Někteří lidé dostávají vstup do klubu zdarma jako poděkování za dobrovolné příspěvky (takže to zdarma ani není), za přednášku v klubu, jako stipendium, nebo ze strategických důvodů. Část lidí je v klubu díky [sponzorům či partnerům](./sponsors-partners.md).
+Ke členství v klubu lze přijít různými způsoby. Každý nově příchozí má v klubu dva týdny zdarma na vyzkoušení. Někteří lidé dostávají vstup do klubu zdarma jako poděkování za dobrovolné příspěvky (takže to zdarma ani není), za přednášku v klubu, jako stipendium, nebo ze strategických důvodů. Studenti vybraných kurzů dostávají propustku, se kterou mají k obvyklým dvěma týdnům ještě měsíc zdarma. Část lidí je v klubu díky [sponzorům či partnerům](./sponsors-partners.md).
 
 {% call note() %}
   {{ 'trash'|icon }} V létě 2024 se změnila metodika ukládání dat ohledně členství v klubu. Starší data bohužel nejsou k dispozici.
@@ -108,6 +108,11 @@ Ke členství v klubu lze přijít různými způsoby. Každý nově příchozí
                 'label': 'dva týdny zdarma',
                 'data': charts.subscription_types_breakdown.pop('trial'),
                 'backgroundColor': '#a9a9a9',
+            },
+            {
+                'label': 'mají propustku z kurzu',
+                'data': charts.subscription_types_breakdown.pop('student_pass', []),
+                'backgroundColor': '#f1a9c6',
             },
             {
                 'label': 'mají stipendium',

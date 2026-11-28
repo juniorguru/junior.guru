@@ -10,6 +10,7 @@ import "./jobs";
 import "./membership";
 import "./metrics";
 import "./openable";
+import "./student-pass";
 import "instant.page";
 import "lite-youtube-embed";
 

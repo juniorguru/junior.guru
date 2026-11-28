@@ -20,6 +20,7 @@ from jg.coop.lib.memberful import (
     is_individual_plan,
     is_partner_plan,
     is_sponsor_plan,
+    is_student_pass_coupon,
     memberful_url,
     timestamp_to_date,
     timestamp_to_datetime,
@@ -341,6 +342,7 @@ def get_active_subscription(
             SubscriptionType.SPONSOR: "group",
             SubscriptionType.PARTNER: "group",
             SubscriptionType.FINAID: "free",
+            SubscriptionType.STUDENT_PASS: "free",
             SubscriptionType.FREE: "free",
         }
         assert set(pseudo_types_mapping.keys()) == set(SubscriptionType)
@@ -402,6 +404,10 @@ def get_subscription_type(
         return SubscriptionType.PARTNER
     if is_individual_plan(plan):
         if coupon := get_coupon(subscription):
+            if is_student_pass_coupon(coupon) and not is_paid_after_coupon(
+                subscription
+            ):
+                return SubscriptionType.STUDENT_PASS
             if coupon.startswith("FINAID"):
                 return SubscriptionType.FINAID
             if coupon.startswith("THANKYOU"):
@@ -415,6 +421,18 @@ def get_subscription_type(
         if plan["intervalUnit"] == "year":
             return SubscriptionType.YEARLY
     raise ValueError(f"Unknown subscription type: {subscription}")
+
+
+def is_paid_after_coupon(subscription: SubscriptionEntity) -> bool:
+    """
+    Checks whether the member paid for an order which came after a one-time coupon
+
+    A one-time coupon, such as the student pass, applies to the first order
+    after the trial. The subscription can keep the coupon even after that,
+    but once a later order has no coupon, it's a regular subscription.
+    """
+    orders = sorted(subscription["orders"], key=itemgetter("createdAt"))
+    return len(orders) > 1 and not orders[-1]["coupon"]
 
 
 def get_subscription_type_or_none(

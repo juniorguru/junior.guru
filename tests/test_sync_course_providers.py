@@ -1,7 +1,9 @@
 import pytest
 
+from jg.coop.lib.memberful import student_pass_coupon_code
 from jg.coop.sync.course_providers import (
     TITLE_LENGTH_SEO_LIMIT,
+    YAML_DIR_PATH,
     compile_page_description,
     compile_page_lead,
     compile_page_title,
@@ -53,3 +55,11 @@ def test_compile_page_description_extra_questions():
 
 def test_compile_page_lead_mentions_recenze():
     assert "recenze" in compile_page_lead("Engeto")
+
+
+@pytest.mark.parametrize(
+    "slug", sorted(path.stem for path in YAML_DIR_PATH.glob("*.yml"))
+)
+def test_slug_fits_coupon_code(slug: str):
+    """Memberful coupon codes allow only letters and digits"""
+    assert student_pass_coupon_code(slug).isalnum()

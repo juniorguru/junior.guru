@@ -1,5 +1,6 @@
 name: Czechitas
 url: https://www.czechitas.cz/
+student_pass: true
 questions:
   - Jaká je ta jejich Digitální akademie?
 cz_business_id: 22834958

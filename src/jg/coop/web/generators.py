@@ -182,6 +182,28 @@ def generate_course_provider_pages() -> Generator[GeneratedDocument]:
 
 
 @db.connection_context()
+def generate_student_pass_pages() -> Generator[GeneratedDocument]:
+    for course_provider in CourseProvider.student_pass_listing():
+        yield GeneratedDocument(
+            path=course_provider.student_pass_page_url,
+            meta=build_student_pass_meta(course_provider.name, course_provider.slug),
+            content=(DOCS_DIR / "student_pass.jinja").read_text(),
+        )
+
+
+def build_student_pass_meta(name: str, slug: str) -> dict[str, Any]:
+    return {
+        "title": f"Propustka do\u00a0klubu pro studenty {name}",
+        "description": (
+            f"Studenti {name} mají v\u00a0klubu junior.guru "
+            "kromě dvou týdnů na\u00a0vyzkoušení ještě měsíc zdarma."
+        ),
+        "course_provider_slug": slug,
+        "noindex": True,
+    }
+
+
+@db.connection_context()
 def generate_newsletter_issue_pages() -> Generator[GeneratedDocument]:
     for newsletter_issue in NewsletterIssue.listing():
         yield GeneratedDocument(
@@ -211,6 +233,7 @@ def main():
         generate_newsletter_issue_pages,
         generate_podcast_episode_pages,
         generate_redirects,
+        generate_student_pass_pages,
     ]
     logger.info(f"Generating documents ({len(generators)} generators)")
     counter = Counter()

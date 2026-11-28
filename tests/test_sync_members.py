@@ -779,3 +779,124 @@ def test_get_mrr_history():
 
 def test_date_to_timestamp():
     assert date_to_timestamp(date(2025, 2, 1)) == 1738368000
+
+
+def make_student_pass_subscription(orders: list[dict], coupon: str | None) -> dict:
+    return {
+        "id": "123",
+        "active": True,
+        "activatedAt": 1764547200,
+        "trialEndAt": 1765756800,
+        "expiresAt": 1768435200,
+        "orders": orders,
+        "plan": {
+            "name": "Členství v klubu",
+            "intervalUnit": "month",
+            "forSale": True,
+            "additionalMemberPriceCents": None,
+            "planGroup": {"name": "Členství v klubu"},
+        },
+        "coupon": {"code": coupon} if coupon else None,
+    }
+
+
+@pytest.mark.parametrize(
+    "orders, coupon, expected",
+    [
+        pytest.param(
+            [{"createdAt": 1764547200, "coupon": None}],
+            "KURZCZECHITAS",
+            SubscriptionType.STUDENT_PASS,
+            id="trial",
+        ),
+        pytest.param(
+            [
+                {"createdAt": 1764547200, "coupon": None},
+                {"createdAt": 1765756800, "coupon": {"code": "KURZCZECHITAS"}},
+            ],
+            "KURZCZECHITAS",
+            SubscriptionType.STUDENT_PASS,
+            id="free month",
+        ),
+        pytest.param(
+            [
+                {"createdAt": 1764547200, "coupon": None},
+                {"createdAt": 1765756800, "coupon": {"code": "KURZCZECHITAS"}},
+                {"createdAt": 1768435200, "coupon": None},
+            ],
+            "KURZCZECHITAS",
+            SubscriptionType.MONTHLY,
+            id="paid after free month",
+        ),
+        pytest.param(
+            [
+                {"createdAt": 1764547200, "coupon": None},
+                {"createdAt": 1765756800, "coupon": {"code": "KURZCZECHITAS"}},
+                {"createdAt": 1768435200, "coupon": None},
+            ],
+            None,
+            SubscriptionType.MONTHLY,
+            id="paid after free month, coupon gone",
+        ),
+        pytest.param(
+            [{"createdAt": 1764547200, "coupon": None}],
+            "FINAID123",
+            SubscriptionType.FINAID,
+            id="other coupon",
+        ),
+        pytest.param(
+            [{"createdAt": 1764547200, "coupon": None}],
+            None,
+            SubscriptionType.MONTHLY,
+            id="no coupon",
+        ),
+    ],
+)
+def test_get_subscription_type_student_pass(
+    orders: list[dict], coupon: str | None, expected: SubscriptionType
+):
+    subscription = make_student_pass_subscription(orders, coupon)
+
+    assert get_subscription_type(subscription, date(2026, 1, 20)) == expected
+
+
+def test_get_subscription_type_recognizes_student_pass():
+    subscription = make_student_pass_subscription(
+        [
+            {"createdAt": 1764547200, "coupon": None},
+            {"createdAt": 1765756800, "coupon": {"code": "KURZCZECHITAS"}},
+        ],
+        "KURZCZECHITAS",
+    )
+
+    assert (
+        get_subscription_type(subscription, date(2025, 12, 20))
+        == SubscriptionType.STUDENT_PASS
+    )
+
+
+def test_get_subscription_type_recognizes_student_pass_during_trial():
+    subscription = make_student_pass_subscription(
+        [{"createdAt": 1764547200, "coupon": None}], "KURZCZECHITAS"
+    )
+
+    assert (
+        get_subscription_type(subscription, date(2025, 12, 5))
+        == SubscriptionType.STUDENT_PASS
+    )
+
+
+def test_get_subscription_type_recognizes_monthly_after_student_pass():
+    subscription = make_student_pass_subscription(
+        [
+            {"createdAt": 1764547200, "coupon": None},
+            {"createdAt": 1765756800, "coupon": {"code": "KURZCZECHITAS"}},
+            {"createdAt": 1768435200, "coupon": None},
+        ],
+        "KURZCZECHITAS",
+    )
+
+    assert (
+        get_subscription_type(subscription, date(2026, 1, 20))
+        == SubscriptionType.MONTHLY
+    )
