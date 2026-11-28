@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "sass:map";
 
 @keyframes heartbeat {
@@ -25,4 +26,90 @@
 
 .heartbeat {
   animation: heartbeat 5s ease-in-out infinite;
+}
+
+.love-donate {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2 * $spacer;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2 * $spacer;
+  margin-bottom: $spacer;
+  background-color: $jg-blue-light;
+  border-radius: $border-radius;
+}
+
+.love-donate-qr {
+  flex: 0 0 auto;
+  width: 200px;
+  padding: map.get($spacers, 2);
+  background-color: $jg-white;
+  border-radius: $border-radius;
+}
+
+.love-donate-qr svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.love-donate-heading {
+  @extend .fs-4;
+  margin-top: 0;
+}
+
+.love-donate-details {
+  flex: 1 1 15rem;
+  max-width: 25rem;
+}
+
+.love-donate-account {
+  margin-bottom: 0;
+}
+
+.love-donate-account dt {
+  @extend .text-muted;
+  font-weight: $font-weight-normal;
+}
+
+.love-donate-account dd {
+  margin-bottom: map.get($spacers, 2);
+  font-weight: $font-weight-bold;
+  user-select: all;
+}
+
+.love-progress-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.love-progress {
+  @extend .progress;
+  width: 100%;
+  max-width: 30rem;
+  height: 1.8rem;
+  margin: $spacer 0;
+  background-color: color.mix($jg-pink, $jg-white, 20%);
+}
+
+.love-progress-bar {
+  @extend .progress-bar;
+  @extend .breathe;
+  font-weight: 600;
+  color: $jg-white;
+  background-color: $jg-pink;
+}
+
+.love-progress-text {
+  max-width: 30rem;
+  margin-bottom: map.get($spacers, 2);
+}
+
+.love-progress-thanks {
+  @extend .fs-4;
+  font-weight: $font-weight-bold;
+  color: $jg-pink;
 }

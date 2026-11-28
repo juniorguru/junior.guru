@@ -1,6 +1,7 @@
 from collections.abc import Callable
 from datetime import date
 
+from jg.coop.lib.brand import DONATIONS_VARIABLE_SYMBOL
 from jg.coop.models.transaction import TransactionsCategory
 
 
@@ -255,7 +256,10 @@ def direct_donations_fallback(transaction: dict, secrets: dict) -> TransactionsC
 
 @category_rule
 def direct_donations(transaction: dict, secrets: dict) -> TransactionsCategory:
-    if transaction["variable_symbol"] == "444222" and transaction["amount"] > 0:
+    if (
+        transaction["variable_symbol"] == DONATIONS_VARIABLE_SYMBOL
+        and transaction["amount"] > 0
+    ):
         return TransactionsCategory.DONATIONS
 
 

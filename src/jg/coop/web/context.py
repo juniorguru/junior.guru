@@ -1,12 +1,20 @@
 from datetime import UTC, date, datetime, timedelta
 
-from jg.coop.lib import loggers, months
+from markupsafe import Markup
+
+from jg.coop.lib import brand, loggers, months
 from jg.coop.lib.discord_club import (
     CLUB_EVENTS_CHANNEL_URL,
     CLUB_GUILD_ID,
     CLUB_JOBS_CHANNEL_URL,
     ClubChannelID,
     ClubMemberID,
+)
+from jg.coop.lib.donations import (
+    DONATION_AMOUNT_CZK,
+    DONATION_MESSAGE,
+    coverage_ptc,
+    qr_payment_svg,
 )
 from jg.coop.models.base import db
 from jg.coop.models.blog import BlogArticle
@@ -38,10 +46,10 @@ from jg.coop.models.page import Page
 from jg.coop.models.partner import Partner
 from jg.coop.models.podcast import PodcastEpisode
 from jg.coop.models.role import InterestRole
-from jg.coop.models.sponsor import GitHubSponsor, PastSponsor, Sponsor, SponsorTier
+from jg.coop.models.sponsor import GitHubSponsor, PastSponsor, Sponsor
 from jg.coop.models.stage import Stage
 from jg.coop.models.topic import TopicDiscussion, TopicMention
-from jg.coop.models.transaction import Transaction
+from jg.coop.models.transaction import Transaction, TransactionsCategory
 from jg.coop.models.wisdom import Wisdom
 
 
@@ -133,8 +141,7 @@ def on_docs_context(context):
     context["partners"] = Partner.listing()
 
     # love.jinja
-    context["github_sponsors_czk"] = ExchangeRate.from_currency(4, "USD")
-    context["sponsor_tiers"] = SponsorTier.pricing_listing()
+    context.update(get_love_context(date.today()))
 
     # courses.md
     context["course_providers_by_group"] = CourseProvider.grouping()
@@ -181,6 +188,35 @@ def on_docs_context(context):
     context["channels_digest"] = ClubMessage.digest_channels(
         date.today() - timedelta(days=7), limit=5
     )
+
+
+def get_love_context(today: date) -> dict:
+    return build_love_context(
+        Transaction.revenue_ttm_breakdown(today),
+        Transaction.cost_ttm(today),
+        github_sponsors_czk=ExchangeRate.from_currency(4, "USD"),
+    )
+
+
+def build_love_context(
+    revenue_breakdown: dict[str, int], cost: int, github_sponsors_czk: int
+) -> dict:
+    return {
+        "github_sponsors_czk": github_sponsors_czk,
+        "donation_amount_czk": DONATION_AMOUNT_CZK,
+        "donation_qr_svg": Markup(
+            qr_payment_svg(
+                brand.BANK_ACCOUNT,
+                brand.BANK_BIC,
+                DONATION_AMOUNT_CZK,
+                brand.DONATIONS_VARIABLE_SYMBOL,
+                DONATION_MESSAGE,
+            )
+        ),
+        "donations_coverage_ptc": coverage_ptc(
+            revenue_breakdown, cost, TransactionsCategory.DONATIONS
+        ),
+    }
 
 
 def get_jobs_context() -> dict:

@@ -123,12 +123,9 @@ def format_jinja():
     for path in paths:
         logger.debug(path.relative_to(cwd))
         markup = path.read_text()
-        imports = get_jinja_imports(markup)
-        calls = get_jinja_calls(markup)
-        unused_imports = imports - calls
-        if unused_imports:
-            logger.warning(f"Unused imports: {', '.join(unused_imports)}")
-            path.write_text(replace_jinja_imports(markup, calls))
+        if unused_imports := get_unused_jinja_imports(markup):
+            logger.warning(f"Unused imports: {', '.join(sorted(unused_imports))}")
+            path.write_text(remove_unused_jinja_imports(markup))
 
 
 @main.command()
@@ -254,6 +251,16 @@ def optimize_svg():
 
 def kilobytes(size) -> int:
     return math.ceil(size / 1000)
+
+
+def get_unused_jinja_imports(markup: str) -> set[str]:
+    return get_jinja_imports(markup) - get_jinja_calls(markup)
+
+
+def remove_unused_jinja_imports(markup: str) -> str:
+    """Keep only imports which are called"""
+    used_imports = get_jinja_imports(markup) & get_jinja_calls(markup)
+    return replace_jinja_imports(markup, used_imports)
 
 
 def get_jinja_imports(markup: str) -> set[str]:

@@ -22,7 +22,7 @@ description: Nezávislý katalog kurzů programování a testování. Recenze a 
   {% if group == "highlighted" %}
 
 ## Sponzoři
-Vybrali si [tarif z ceníku](love.jinja) a poslali finanční prostředky na provoz junior.guru. Neznamená to, že jsou nejlepší, ale budiž jim ke cti, že podporují tento projekt.
+[Finančně podpořili](love.jinja) provoz junior.guru. Neznamená to, že jsou nejlepší, ale budiž jim ke cti, že podporují tento projekt.
 {% set card_class = 'highlighted' %}
 
   {% elif group == "partners" %}

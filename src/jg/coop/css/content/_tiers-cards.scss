@@ -36,6 +36,15 @@
   }
 }
 
+.tiers-cards .tiers-card.wide {
+  @include media-breakpoint-up(sm) {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    margin-right: 0;
+  }
+}
+
 .tiers-card-header {
   @extend .card-header;
   @extend .fs-5;
@@ -52,12 +61,21 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
+  padding-top: $spacer;
   margin-bottom: 0;
+  text-align: right;
   background-color: $jg-blue-light;
   border-color: color.adjust($jg-blue-light, $lightness: -2%);
 }
 
+.tier-card-price {
+  @extend .fs-5;
+  width: 100%;
+  margin-bottom: map.get($spacers, 2);
+}
+
 .tier-card-footer small {
+  width: 100%;
   margin-top: map.get($spacers, 2);
 }

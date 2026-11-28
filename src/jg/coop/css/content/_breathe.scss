@@ -1,0 +1,27 @@
+@keyframes breathe {
+  0%,
+  68% {
+    transform: scaleX(1);
+  }
+
+  88% {
+    transform: scaleX(1.06);
+  }
+
+  91% {
+    transform: scaleX(1.08);
+  }
+
+  93% {
+    transform: scaleX(.98);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.breathe {
+  transform-origin: left center;
+  animation: breathe 5s ease-in-out infinite;
+}

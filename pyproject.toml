@@ -53,6 +53,7 @@ dependencies = [
   "pydantic>=2.11.10",
   "mastodon-py>=2.1.4",
   "markdownify>=1.2.2",
+  "qrplatba>=1.2.0",
 ]
 
 [project.urls]

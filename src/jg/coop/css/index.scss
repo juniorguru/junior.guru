@@ -82,6 +82,7 @@ $bootstrap-icons-font-dir: "../../../../node_modules/bootstrap-icons/font/fonts"
 /*
   CUSTOM: SHARED CONTENT COMPONENTS
 */
+@import "./content/breathe";
 @import "./content/document";
 @import "./content/pulse";
 
@@ -93,6 +94,7 @@ $bootstrap-icons-font-dir: "../../../../node_modules/bootstrap-icons/font/fonts"
 @import "./content/blockquote";
 @import "./content/brand-btn";
 @import "./content/breadcrumb";
+@import "./content/breakout";
 @import "./content/c2a";
 @import "./content/candidates";
 @import "./content/card-badge";

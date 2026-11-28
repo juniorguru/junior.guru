@@ -1,0 +1,14 @@
+@use "sass:map";
+
+// A block which sticks out of the document column on wide screens,
+// matching the width of homepage sections. On narrow screens, where the
+// column is already as wide as the viewport, it behaves as a normal block.
+.breakout {
+  @each $breakpoint in (lg, xl, xxl) {
+    @include media-breakpoint-up($breakpoint) {
+      $width: calc(#{map.get($container-max-widths, $breakpoint)} - #{$grid-gutter-width});
+      margin-right: calc((100% - #{$width}) / 2);
+      margin-left: calc((100% - #{$width}) / 2);
+    }
+  }
+}
