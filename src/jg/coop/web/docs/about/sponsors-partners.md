@@ -30,7 +30,7 @@ Ačkoliv dělá obchody s firmami, zachovává si nezávislost a nenechává se 
 
 ## Firemní sponzoři
 
-Firmy, které finančně podporují provoz junior.guru. Všichni sponzoři jsou si rovni, bez ohledu na to, kolik platí.
+Firmy, které finančně podporují provoz junior.guru.
 
 <div class="table-responsive"><table class="table align-middle">
   {% for sponsor in sponsors %}
