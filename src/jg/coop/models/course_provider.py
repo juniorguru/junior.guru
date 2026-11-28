@@ -105,7 +105,7 @@ class CourseProvider(BaseModel):
 
     @property
     def student_pass_absolute_url(self) -> str:
-        return site_url(f"club/{self.slug}/")
+        return site_url(f"{self.student_pass_page_url.removesuffix('.jinja')}/")
 
     @property
     def group(self) -> CourseProviderGroup:

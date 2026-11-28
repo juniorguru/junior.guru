@@ -283,3 +283,9 @@ def test_student_pass_listing(test_db: SqliteDatabase):
     create_course_provider(3, slug="ghi", student_pass=True, is_gone=True)
 
     assert [cp.slug for cp in CourseProvider.student_pass_listing()] == ["abc"]
+
+
+def test_student_pass_absolute_url(test_db: SqliteDatabase):
+    cp = create_course_provider(1, slug="czechitas", student_pass=True)
+
+    assert cp.student_pass_absolute_url == "https://junior.guru/club/czechitas/"
