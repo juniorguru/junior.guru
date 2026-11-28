@@ -5,7 +5,6 @@ import pytest
 from lxml import html
 
 from jg.coop.lib.memberful import (
-    from_cents,
     is_one_time_code_url,
     parse_export_id,
     parse_one_time_code_email,
@@ -108,10 +107,6 @@ def test_parse_export_id_cancellations():
     assert parse_export_id(html_tree) == 68751
 
 
-def test_from_cents():
-    assert from_cents(123456) == 1234
-
-
 @pytest.mark.parametrize(
     "name, expected",
     [
@@ -121,6 +116,19 @@ def test_from_cents():
 )
 def test_parse_tier_name(name: str, expected: str):
     assert parse_tier_name(name) == expected
+
+
+@pytest.mark.parametrize(
+    "name",
+    [
+        "Roční členství v klubu",
+        "Mentoring „CoreSkill“",
+        "Klubové lekce angličtiny",
+    ],
+)
+def test_parse_tier_name_raises(name: str):
+    with pytest.raises(ValueError):
+        parse_tier_name(name)
 
 
 @pytest.mark.parametrize(
