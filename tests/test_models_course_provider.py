@@ -305,3 +305,21 @@ def test_to_json_ld_no_companies(test_db: SqliteDatabase):
     cp = create_course_provider(1)
 
     assert "subOrganization" not in cp.to_json_ld()
+
+
+def test_student_pass_checkout_url(test_db: SqliteDatabase):
+    cp = create_course_provider(1, slug="czechitas", student_pass=True)
+
+    assert cp.student_pass_checkout_url == (
+        "https://juniorguru.memberful.com/checkout?plan=143775"
+        "&coupon=KURZCZECHITAS&utm_source=student_pass&utm_medium=web"
+        "&utm_campaign=course-czechitas"
+    )
+
+
+def test_student_pass_listing(test_db: SqliteDatabase):
+    create_course_provider(1, slug="abc", student_pass=True)
+    create_course_provider(2, slug="def")
+    create_course_provider(3, slug="ghi", student_pass=True, is_gone=True)
+
+    assert [cp.slug for cp in CourseProvider.student_pass_listing()] == ["abc"]

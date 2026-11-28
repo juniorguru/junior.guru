@@ -1,0 +1,70 @@
+.student-pass-benefits {
+  padding: 0;
+  margin-bottom: $main-spacer;
+  list-style: none;
+}
+
+.student-pass-benefits .bi {
+  color: $jg-blue;
+}
+
+.student-pass {
+  padding: $spacer;
+  margin-bottom: $main-spacer;
+  background: $jg-blue-light;
+  border-radius: $border-radius;
+}
+
+.student-pass-label {
+  @extend .form-label;
+  display: block;
+}
+
+.student-pass-row {
+  @extend .input-group;
+}
+
+.student-pass-input {
+  @extend .form-control;
+  border-color: $jg-blue;
+  border-width: 2px;
+}
+
+.student-pass-button {
+  @extend .btn;
+  @extend .btn-primary;
+}
+
+.student-pass-verifying {
+  margin: 0;
+}
+
+.student-pass-ticket {
+  text-align: center;
+}
+
+.student-pass-ticket-heading {
+  @extend .h3;
+  margin-top: 0;
+}
+
+.student-pass-ticket-button {
+  @extend .btn;
+  @extend .btn-primary;
+  @extend .btn-lg;
+  margin-bottom: $spacer;
+}
+
+.student-pass-ticket-note {
+  @extend .text-muted;
+  margin: 0;
+}
+
+.student-pass-organizers {
+  margin-top: $main-spacer;
+}
+
+.student-pass-organizers-text {
+  @extend .form-control;
+  font-size: $font-size-sm;
+}

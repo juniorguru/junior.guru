@@ -10,6 +10,7 @@ from datetime import UTC, date, datetime, timedelta
 from operator import itemgetter
 from pathlib import Path
 from typing import Any
+from urllib.parse import urlencode
 
 import httpx2
 from gql import Client, gql
@@ -48,6 +49,21 @@ MEMBERFUL_IMAP_USER = os.getenv("MEMBERFUL_IMAP_USER")
 MEMBERFUL_IMAP_PASSWORD = os.getenv("MEMBERFUL_IMAP_PASSWORD")
 
 MEMBERFUL_DOMAIN = "juniorguru.memberful.com"
+
+# The standard monthly individual plan, which comes with the 14-day trial
+MONTHLY_PLAN_ID = 143775
+
+# Base coupon, created by hand: 100% off, one-time, limited to the monthly
+# plan, max 100 redemptions. Codes created under it inherit these settings.
+# https://juniorguru.memberful.com/admin/discounts/79143/edit
+STUDENT_PASS_DISCOUNT_ID = 79143
+
+STUDENT_PASS_COUPON_PREFIX = "KURZ"
+
+# Memberful coupon codes may contain only letters and digits
+COUPON_CODE_RE = re.compile(r"^[A-Za-z0-9]+$")
+
+COUPON_CODE_TAKEN_MESSAGE = "Code is taken."
 
 ONE_TIME_CODE_SENDER = "mail@memberful.com"
 
@@ -436,6 +452,50 @@ def memberful_url(account_id: int | str) -> str:
     if not account_id:
         raise ValueError(f"{account_id}")
     return f"https://juniorguru.memberful.com/admin/members/{account_id}/"
+
+
+def checkout_url(
+    plan_id: int,
+    coupon: str | None = None,
+    utm_params: dict[str, str] | None = None,
+) -> str:
+    """Purchase link, optionally with a coupon code pre-applied"""
+    params = {"plan": str(plan_id)}
+    if coupon:
+        params["coupon"] = coupon
+    params |= utm_params or {}
+    return f"https://{MEMBERFUL_DOMAIN}/checkout?{urlencode(params)}"
+
+
+def student_pass_coupon_code(slug: str) -> str:
+    code = f"{STUDENT_PASS_COUPON_PREFIX}{slug.upper()}"
+    if not COUPON_CODE_RE.match(code):
+        raise ValueError(f"Slug {slug!r} can't be used in a coupon code: {code!r}")
+    return code
+
+
+def is_student_pass_coupon(code: str | None) -> bool:
+    return bool(code) and code.upper().startswith(STUDENT_PASS_COUPON_PREFIX)
+
+
+def parse_created_coupons(payload: dict[str, Any]) -> list[str]:
+    """
+    Returns codes the createCoupons mutation created, raises on errors
+
+    Codes which already exist are fine, so that the mutation can run repeatedly.
+    """
+    data = payload["createCoupons"]
+    errors = [
+        error
+        for error in data["errors"]
+        if any(
+            message["message"] != COUPON_CODE_TAKEN_MESSAGE
+            for message in error["messages"]
+        )
+    ]
+    if errors:
+        raise ValueError(f"Could not create coupons: {errors!r}")
+    return [coupon["code"] for coupon in data["coupons"]]
 
 
 def is_one_time_code_url(url: str) -> bool:

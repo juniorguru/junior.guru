@@ -5,13 +5,17 @@ import pytest
 from lxml import html
 
 from jg.coop.lib.memberful import (
+    checkout_url,
     from_cents,
     is_one_time_code_url,
+    is_student_pass_coupon,
+    parse_created_coupons,
     parse_export_id,
     parse_one_time_code_email,
     parse_tier_name,
     read_trusted_browser,
     select_one_time_code,
+    student_pass_coupon_code,
     write_trusted_browser,
 )
 
@@ -193,3 +197,84 @@ def test_write_and_read_trusted_browser(tmp_path: Path):
     write_trusted_browser(path, "abc123")
 
     assert read_trusted_browser(path) == "abc123"
+
+
+def test_checkout_url():
+    assert checkout_url(123) == "https://juniorguru.memberful.com/checkout?plan=123"
+
+
+def test_checkout_url_with_coupon_and_utm_params():
+    url = checkout_url(123, coupon="KURZABC", utm_params={"utm_campaign": "x"})
+
+    assert url == (
+        "https://juniorguru.memberful.com/checkout"
+        "?plan=123&coupon=KURZABC&utm_campaign=x"
+    )
+
+
+def test_student_pass_coupon_code():
+    assert student_pass_coupon_code("czechitas") == "KURZCZECHITAS"
+
+
+@pytest.mark.parametrize("slug", ["foo-bar", "foo_bar", "foo bar", "č"])
+def test_student_pass_coupon_code_invalid(slug: str):
+    with pytest.raises(ValueError):
+        student_pass_coupon_code(slug)
+
+
+@pytest.mark.parametrize(
+    "code, expected",
+    [
+        ("KURZCZECHITAS", True),
+        ("kurzczechitas", True),
+        ("FINAID123", False),
+        ("", False),
+        (None, False),
+    ],
+)
+def test_is_student_pass_coupon(code: str | None, expected: bool):
+    assert is_student_pass_coupon(code) is expected
+
+
+def test_parse_created_coupons():
+    payload = {
+        "createCoupons": {
+            "coupons": [{"code": "KURZABC"}, {"code": "KURZXYZ"}],
+            "errors": [],
+        }
+    }
+
+    assert parse_created_coupons(payload) == ["KURZABC", "KURZXYZ"]
+
+
+def test_parse_created_coupons_tolerates_taken_codes():
+    payload = {
+        "createCoupons": {
+            "coupons": [{"code": "KURZXYZ"}],
+            "errors": [
+                {
+                    "key": "KURZABC",
+                    "messages": [{"attribute": "code", "message": "Code is taken."}],
+                }
+            ],
+        }
+    }
+
+    assert parse_created_coupons(payload) == ["KURZXYZ"]
+
+
+def test_parse_created_coupons_raises_on_other_errors():
+    payload = {
+        "createCoupons": {
+            "coupons": [],
+            "errors": [
+                {
+                    "key": "KURZ_ABC",
+                    "messages": [{"attribute": "code", "message": "Code is invalid."}],
+                }
+            ],
+        }
+    }
+
+    with pytest.raises(ValueError):
+        parse_created_coupons(payload)

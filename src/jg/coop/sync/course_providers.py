@@ -35,6 +35,7 @@ class CourseProviderConfig(YAMLConfig):
     cz_business_id: int | None = None
     sk_business_id: int | None = None
     is_gone: bool = False
+    student_pass: bool = False
 
 
 @cli.sync_command()

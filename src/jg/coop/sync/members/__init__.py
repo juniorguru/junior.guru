@@ -20,6 +20,7 @@ from jg.coop.lib.memberful import (
     is_individual_plan,
     is_partner_plan,
     is_sponsor_plan,
+    is_student_pass_coupon,
     memberful_url,
     timestamp_to_date,
     timestamp_to_datetime,
@@ -341,6 +342,7 @@ def get_active_subscription(
             SubscriptionType.SPONSOR: "group",
             SubscriptionType.PARTNER: "group",
             SubscriptionType.FINAID: "free",
+            SubscriptionType.STUDENT_PASS: "free",
             SubscriptionType.FREE: "free",
         }
         assert set(pseudo_types_mapping.keys()) == set(SubscriptionType)
@@ -401,6 +403,8 @@ def get_subscription_type(
     if is_partner_plan(plan):
         return SubscriptionType.PARTNER
     if is_individual_plan(plan):
+        if is_student_pass(subscription):
+            return SubscriptionType.STUDENT_PASS
         if coupon := get_coupon(subscription):
             if coupon.startswith("FINAID"):
                 return SubscriptionType.FINAID
@@ -415,6 +419,21 @@ def get_subscription_type(
         if plan["intervalUnit"] == "year":
             return SubscriptionType.YEARLY
     raise ValueError(f"Unknown subscription type: {subscription}")
+
+
+def is_student_pass(subscription: SubscriptionEntity) -> bool:
+    """
+    Checks whether the subscription is in its trial or free month thanks to a student pass
+
+    The pass is a one-time coupon, which applies to the first order after
+    the trial. Once the member pays for a later order, it's a regular subscription.
+    """
+    orders = sorted(subscription["orders"], key=itemgetter("createdAt"), reverse=True)
+    if orders and orders[0]["coupon"]:
+        return is_student_pass_coupon(orders[0]["coupon"]["code"])
+    if len(orders) <= 1 and subscription["coupon"]:
+        return is_student_pass_coupon(subscription["coupon"]["code"])
+    return False
 
 
 def get_subscription_type_or_none(

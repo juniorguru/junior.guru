@@ -9,6 +9,11 @@ import czech_sort
 from peewee import BooleanField, CharField, IntegerField, TextField, fn
 
 from jg.coop.lib.brand import site_url, static_url
+from jg.coop.lib.memberful import (
+    MONTHLY_PLAN_ID,
+    checkout_url,
+    student_pass_coupon_code,
+)
 from jg.coop.models.base import BaseModel
 from jg.coop.models.partner import Partner
 from jg.coop.models.sponsor import Sponsor, SponsorTier
@@ -67,6 +72,7 @@ class CourseProvider(BaseModel):
     page_monthly_pageviews = IntegerField(null=True)
     page_last_month_pageviews = IntegerField(null=True)
     usp_description = TextField(null=True)  # unique selling proposition
+    student_pass = BooleanField(default=False)
 
     @property
     def topic_mention(self) -> TopicMention:
@@ -79,6 +85,26 @@ class CourseProvider(BaseModel):
     @property
     def page_url(self) -> str:
         return f"courses/{self.slug}.md"
+
+    @property
+    def student_pass_coupon(self) -> str:
+        return student_pass_coupon_code(self.slug)
+
+    @property
+    def student_pass_checkout_url(self) -> str:
+        return checkout_url(
+            MONTHLY_PLAN_ID,
+            coupon=self.student_pass_coupon,
+            utm_params=student_pass_utm_params(self.slug),
+        )
+
+    @property
+    def student_pass_page_url(self) -> str:
+        return f"club/{self.slug}.jinja"
+
+    @property
+    def student_pass_absolute_url(self) -> str:
+        return site_url(f"club/{self.slug}/")
 
     @property
     def group(self) -> CourseProviderGroup:
@@ -156,6 +182,14 @@ class CourseProvider(BaseModel):
         return cls.select().order_by(fn.czech_sort(cls.name))
 
     @classmethod
+    def student_pass_listing(cls) -> Iterable[Self]:
+        return (
+            cls.select()
+            .where(cls.student_pass == True, cls.is_gone == False)
+            .order_by(fn.czech_sort(cls.name))
+        )
+
+    @classmethod
     def pageviews_listing(cls, metric_name: str) -> Iterable[Self]:
         metric_field = getattr(cls, metric_name)
         return (
@@ -197,3 +231,11 @@ class CourseProvider(BaseModel):
 
     def __str__(self) -> str:
         return self.name
+
+
+def student_pass_utm_params(slug: str) -> dict[str, str]:
+    return {
+        "utm_source": "student_pass",
+        "utm_medium": "web",
+        "utm_campaign": f"course-{slug}",
+    }
