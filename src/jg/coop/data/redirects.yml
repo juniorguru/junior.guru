@@ -95,6 +95,9 @@ registry:
   - from_url: "/courses/naucmeit/"
     to_doc: "courses/entership.md"
 
+  - from_url: "/courses/webykvalitne/"
+    to_doc: "courses/webdesain.md"
+
   - from_url: "/topics/adventofcode/"
     to_doc: "handbook/practice.md"
 
