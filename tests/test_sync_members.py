@@ -16,7 +16,6 @@ from jg.coop.sync.members import (
     had_signup,
     had_trial,
     is_individual_paid_order,
-    is_student_pass,
 )
 
 
@@ -807,7 +806,7 @@ def make_student_pass_subscription(orders: list[dict], coupon: str | None) -> di
         pytest.param(
             [{"createdAt": 1764547200, "coupon": None}],
             "KURZCZECHITAS",
-            True,
+            SubscriptionType.STUDENT_PASS,
             id="trial",
         ),
         pytest.param(
@@ -816,7 +815,7 @@ def make_student_pass_subscription(orders: list[dict], coupon: str | None) -> di
                 {"createdAt": 1765756800, "coupon": {"code": "KURZCZECHITAS"}},
             ],
             "KURZCZECHITAS",
-            True,
+            SubscriptionType.STUDENT_PASS,
             id="free month",
         ),
         pytest.param(
@@ -826,7 +825,7 @@ def make_student_pass_subscription(orders: list[dict], coupon: str | None) -> di
                 {"createdAt": 1768435200, "coupon": None},
             ],
             "KURZCZECHITAS",
-            False,
+            SubscriptionType.MONTHLY,
             id="paid after free month",
         ),
         pytest.param(
@@ -836,27 +835,29 @@ def make_student_pass_subscription(orders: list[dict], coupon: str | None) -> di
                 {"createdAt": 1768435200, "coupon": None},
             ],
             None,
-            False,
+            SubscriptionType.MONTHLY,
             id="paid after free month, coupon gone",
         ),
         pytest.param(
             [{"createdAt": 1764547200, "coupon": None}],
             "FINAID123",
-            False,
+            SubscriptionType.FINAID,
             id="other coupon",
         ),
         pytest.param(
             [{"createdAt": 1764547200, "coupon": None}],
             None,
-            False,
+            SubscriptionType.MONTHLY,
             id="no coupon",
         ),
     ],
 )
-def test_is_student_pass(orders: list[dict], coupon: str | None, expected: bool):
+def test_get_subscription_type_student_pass(
+    orders: list[dict], coupon: str | None, expected: SubscriptionType
+):
     subscription = make_student_pass_subscription(orders, coupon)
 
-    assert is_student_pass(subscription) is expected
+    assert get_subscription_type(subscription, date(2026, 1, 20)) == expected
 
 
 def test_get_subscription_type_recognizes_student_pass():

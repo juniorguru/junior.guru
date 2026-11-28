@@ -403,9 +403,11 @@ def get_subscription_type(
     if is_partner_plan(plan):
         return SubscriptionType.PARTNER
     if is_individual_plan(plan):
-        if is_student_pass(subscription):
-            return SubscriptionType.STUDENT_PASS
         if coupon := get_coupon(subscription):
+            if is_student_pass_coupon(coupon) and not is_paid_after_coupon(
+                subscription
+            ):
+                return SubscriptionType.STUDENT_PASS
             if coupon.startswith("FINAID"):
                 return SubscriptionType.FINAID
             if coupon.startswith("THANKYOU"):
@@ -421,19 +423,16 @@ def get_subscription_type(
     raise ValueError(f"Unknown subscription type: {subscription}")
 
 
-def is_student_pass(subscription: SubscriptionEntity) -> bool:
+def is_paid_after_coupon(subscription: SubscriptionEntity) -> bool:
     """
-    Checks whether the subscription is in its trial or free month thanks to a student pass
+    Checks whether the member paid for an order which came after a one-time coupon
 
-    The pass is a one-time coupon, which applies to the first order after
-    the trial. Once the member pays for a later order, it's a regular subscription.
+    A one-time coupon, such as the student pass, applies to the first order
+    after the trial. The subscription can keep the coupon even after that,
+    but once a later order has no coupon, it's a regular subscription.
     """
-    orders = sorted(subscription["orders"], key=itemgetter("createdAt"), reverse=True)
-    if orders and orders[0]["coupon"]:
-        return is_student_pass_coupon(orders[0]["coupon"]["code"])
-    if len(orders) <= 1 and subscription["coupon"]:
-        return is_student_pass_coupon(subscription["coupon"]["code"])
-    return False
+    orders = sorted(subscription["orders"], key=itemgetter("createdAt"))
+    return len(orders) > 1 and not orders[-1]["coupon"]
 
 
 def get_subscription_type_or_none(
