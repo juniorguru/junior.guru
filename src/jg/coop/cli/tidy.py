@@ -258,7 +258,7 @@ def get_unused_jinja_imports(markup: str) -> set[str]:
 
 
 def remove_unused_jinja_imports(markup: str) -> str:
-    """Keep only imports which are called, never add globals such as `graph_json_ld`"""
+    """Keep only imports which are called"""
     used_imports = get_jinja_imports(markup) & get_jinja_calls(markup)
     return replace_jinja_imports(markup, used_imports)
 
